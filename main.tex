@@ -1,0 +1,353 @@
+\documentclass[a4paper,nobib,justified]{tufte-book}
+
+\usepackage[utf8]{inputenc}
+\input{preamble.tex}
+
+% Greek
+\usepackage[greek,english]{babel}
+\usepackage{alphabeta}
+\let\textlozenge\undefined
+\usepackage{gfsartemisia-euler}
+\NewDocumentCommand{\g}{+m}{\foreignlanguage{greek}{#1}}
+\NewDocumentCommand{\e}{+m}{\foreignlanguage{english}{#1}}
+%\usepackage{hyphenation-greek}
+%\input{hyphenation-el.tex}
+\DefineBibliographyStrings{english}{%
+	page             = {σ\adddot},
+	pages            = {σσ\adddot},
+}
+\DefineBibliographyExtras{USenglish}{%
+	% d-m-y format for long dates
+	\protected\def\mkbibdatelong#1#2#3{%
+		\iffieldundef{#3}
+		{}
+		{\stripzeros{\thefield{#3}}%
+			\iffieldundef{#2}{}{\nobreakspace}}%
+		\iffieldundef{#2}
+		{}
+		{\mkbibmonth{\thefield{#2}}%
+			\iffieldundef{#1}{}{\space}}%
+		\iffieldbibstring{#1}{\bibstring{\thefield{#1}}}{\stripzeros{\thefield{#1}}}}%
+	% d-m-y format for short dates
+	\protected\def\mkbibdateshort#1#2#3{%
+		\iffieldundef{#3}
+		{}
+		{\mkdatezeros{\thefield{#3}}%
+			\iffieldundef{#2}{}{/}}%
+		\iffieldundef{#2}
+		{}
+		{\mkdatezeros{\thefield{#2}}%
+			\iffieldundef{#1}{}{/}}%
+		\iffieldbibstring{#1}{\bibstring{\thefield{#1}}}{\mkdatezeros{\thefield{#1}}}}%
+}
+
+% Override tufte command for headers to remove greek accents
+\makeatletter
+\ExplSyntaxOn
+\cs_new_protected:Npn \removeaccent #1 {
+	\tl_set:Nn \replace_str {#1}
+	\def\acctonos{}
+	\let\accdialytikatonos\accdialytika
+	\tl_replace_all:Nnn \replace_str { ά } { α }
+	\tl_replace_all:Nnn \replace_str { έ } { ε }
+	\tl_replace_all:Nnn \replace_str { ή } { η }
+	\tl_replace_all:Nnn \replace_str { ί } { ι }
+	\tl_replace_all:Nnn \replace_str { ό } { ο }
+	\tl_replace_all:Nnn \replace_str { ύ } { υ }
+	\tl_replace_all:Nnn \replace_str { ώ } { ω }
+	\tl_replace_all:Nnn \replace_str { ϊ } { ϊ }
+	\tl_replace_all:Nnn \replace_str { ϋ } { ϋ }
+	\tl_replace_all:Nnn \replace_str { ΐ } { Ϊ }
+	\tl_replace_all:Nnn \replace_str { ΰ } { Ϋ }
+	\tl_replace_all:Nnn \replace_str { Ά } { α }
+	\tl_replace_all:Nnn \replace_str { Έ } { Ε }
+	\tl_replace_all:Nnn \replace_str { Ή } { Η }
+	\tl_replace_all:Nnn \replace_str { Ί } { Ι }
+	\tl_replace_all:Nnn \replace_str { Ό } { Ο }
+	\tl_replace_all:Nnn \replace_str { Ύ } { Υ }
+	\tl_replace_all:Nnn \replace_str { Ώ } { Ω }
+	%    \tl_replace_all:Nnn \replace_str { Ϊ } { Ι }
+	%    \tl_replace_all:Nnn \replace_str { Ϋ } { Υ }
+	\tl_use:N \replace_str
+}
+\ExplSyntaxOff
+\renewcommand\mainmatter{%
+	\if@openright%
+	\cleardoublepage%
+	\else%
+	\clearpage%
+	\fi%
+	\@mainmattertrue%
+	\fancyhf{}%
+	\ifthenelse{\boolean{@tufte@twoside}}%
+	{% two-side
+		\renewcommand{\chaptermark}[1]{\markboth{##1}{}}%
+		\fancyhead[LE]{\thepage\quad\smallcaps{\newlinetospace{\removeaccent{\plaintitle}}}}% book title
+		\fancyhead[RO]{\smallcaps{\newlinetospace{\removeaccent{\leftmark}}}\quad\thepage}% chapter title
+	}%
+	{% one-side
+		\fancyhead[RE,RO]{\smallcaps{\newlinetospace{\removeaccent{\plaintitle}}}\quad\thepage}% book title
+	}%
+}
+\makeatother
+
+
+%%
+% Book metadata
+%\title{Design of Fault Detection, Isolation and Recovery in the AcubeSAT nanosatellite\thanks{AcubeSAT}}
+\title{Επικοινωνία υποσυστημάτων στον νανοδορυφόρο AcubeSAT}
+\author[Αντώνιος Κερεμίδης]{Αντώνιος Κερεμίδης}
+\publisher{\ensuregreek{Αριστοτελειο Πανεπιστημιο Θεσσαλονικης}}
+
+\hypersetup{
+	pdftitle={Επικοινωνία υποσυστημάτων στον νανοδορυφόρο AcubeSAT},
+	pdfsubject={Επικοινωνία υποσυστημάτων στον νανοδορυφόρο AcubeSAT},
+	pdfauthor={Αντώνιος Κερεμίδης},
+	addtopdfcreator={tufte-book class}
+}
+
+\input{glossary-el.tex}
+
+\begin{document}
+
+%\renewcommand*{\itemautorefname}{Στοιχείο}
+%\renewcommand*{\figureautorefname}{Σχήμα}
+%\renewcommand*{\chapterautorefname}{Κεφάλαιο}
+%\renewcommand*{\sectionautorefname}{Ενότητα}
+%\renewcommand*{\subsectionautorefname}{Ενότητα}
+%\renewcommand*{\tableautorefname}{Πίνακα}
+%\newcommand*{\algorithmautorefname}{Αλγόριθμος}
+%\renewcommand{\appendixpagename}{Παραρτήματα}
+%\newcommand{\Παράρτημαautorefname}{Παράρτημα}
+
+\renewcommand*{\figurename}{Σχήμα}
+\renewcommand*{\tablename}{Πίνακας}
+\renewcommand*{\contentsname}{Περιεχόμενα}
+\renewcommand*{\listfigurename}{Κατάλογος Σχημάτων}
+\renewcommand*{\listtablename}{Κατάλογος Πινάκων}
+\sisetup{range-phrase={ ως }}
+
+\renewcommand{\crefpairconjunction}{ και\nobreakspace}%
+\renewcommand{\creflastconjunction}{ και\nobreakspace}%
+\renewcommand{\crefpairgroupconjunction}{ και\nobreakspace}%
+\renewcommand{\creflastgroupconjunction}{, και\nobreakspace}%
+
+\crefname{figure}{\g{Σχήματος}}{\g{Σχημάτων}}
+\Crefname{figure}{\g{Σχή\-μα}}{\g{Σχήματα}}
+\crefname{table}{\g{Πίνακας}}{\g{Πίνακες}}
+\Crefname{table}{\g{Πίνακα}}{\g{Πίνακες}}
+\crefname{enumi}{\g{Στοιχείου}}{\g{Στοιχείων}}
+\Crefname{enumi}{\g{Στοιχείο}}{\g{Στοιχεία}}
+\Crefname{chapter}{\g{Κεφάλαιο}}{\g{Κεφάλαια}}
+\crefname{section}{\g{Ενότητας}}{\g{Ενοτήτων}}
+\Crefname{section}{\g{Ενότητα}}{\g{Ενότητες}}
+\crefname{subsection}{\g{Ενότητας}}{\g{Ενοτήτων}}
+\Crefname{subsection}{\g{Ενότητα}}{\g{Ενότητες}}
+\Crefname{appendix}{\g{Παράρτημα}}{\g{Παραρτήματα}}
+
+
+% Front matter
+%\frontmatter
+
+% r.1 blank page
+%\blankpage
+
+% r.3 full title page
+\makeatletter
+\renewcommand{\maketitle}{%
+	\newpage
+	\global\@topnum\z@% prevent floats from being placed at the top of the page
+	\begingroup
+	\setlength{\parindent}{0pt}%
+	\setlength{\parskip}{4pt}%
+	\let\@@title\@empty
+	\let\@@author\@empty
+	\let\@@date\@empty
+	\thispagestyle{empty}
+	\begin{fullwidth}
+		\vfill
+		\begin{center}
+			\href{https://www.auth.gr/}{\includegraphics[width=.8\textwidth]{auth_logo_text}}\par
+			\vspace{1cm}
+			\LARGE\textsc{Διπλωματικη Εργασια}\par
+			\vspace{6ex}
+			\hrule
+			\vspace{4ex}
+			\Huge\textbf{Επικοινωνία υποσυστημάτων στον νανοδορυφόρο AcubeSAT}\\[1ex]
+			\vspace{2.7ex}
+			\hrule
+
+			\vspace{4ex}
+
+			\Large
+			\begin{tabular}{ll}
+				\emph{Συγγραφέας:} & \href{https://github.com/toniker}{Αντώνιος \textsc{Κερεμιδης} \normalsize (\fontfamily{pplx}\selectfont 9717)}
+				\\[1.5ex]
+				\emph{Επιβλέπων:} & \href{http://ee.auth.gr/en/school/faculty-staff/electronics-computers-department/hatzopoulos-alkiviadis/}{Καθ. Αλκιβιάδης \textsc{Χατζοπουλος}}
+			\end{tabular}
+
+			\vspace{6ex}
+
+			\large \textit{Η διπλωματική εργασία κατατίθεται για την \\ εκπλήρωση των υποχρεώσεων για λήψη διπλώματος}\\[0.3cm] % University requirement text
+			\textit{στην}\\[0.4cm]
+			\href{https://www.eng.auth.gr/gr/archiki.html}{Πολυτεχνική Σχολή}
+			\\
+			\href{https://ee.auth.gr/}{Τμήμα Ηλεκτρολόγων Μηχανικών \& Μηχανικών Υπολογιστών}
+			\\[1cm] % Research group name and department name
+
+			\vfill
+
+			{\large Date}\\[4cm] % Date % TODO
+
+		\end{center}
+		\vfill
+	\end{fullwidth}
+	\endgroup
+	\thispagestyle{plain}% suppress the running head
+	\tuftebreak% add some space before the text begins
+	\@afterindentfalse\@afterheading% suppress indentation of the next paragraph
+}
+\makeatother
+\maketitle
+
+% v.4 copyright page
+\newpage
+\begin{fullwidth}
+~\vfill
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+Copyright \copyright\ \the\year\ Αντώνιος Κερεμίδης
+
+\par\smallcaps{Δημοσιευτηκε απο το \thanklesspublisher}
+
+\justify
+
+\par Αυτή η εργασία χορηγείται με άδεια Creative Commons Αναφορά Δημιουργού 4.0 Διεθνές (CC BY 4.0 --- η ``Άδεια'')· το κείμενο του παρόντος δεν επιτρέπεται να χρησιμοποιηθεί παρά μόνο με βάση την Άδεια. Για να δείτε ένα αντίγραφο αυτής της άδειας, επισκεφτείτε το
+\url{https://creativecommons.org/licenses/by/4.0/legalcode.el}, ή δείτε μια "αναγνώσιμη από άνθρωπο" σύνοψη στο \url{https://creativecommons.org/licenses/by/4.0/deed.el}.\index{license}
+
+\par Η εργασία ετοιμάστηκε χρησιμοποιώντας \LaTeX{} με το πρότυπο \href{https://ctan.org/pkg/tufte-latex?lang=en}{\texttt{tufte-latex}} και τις βελτιώσεις του \href{https://github.com/lalider/tufte-latex-thesis}{\texttt{tufte-latex-thesis}}.
+
+\par Το AcubeSAT project εκτελείται με την υποστήριξη του Education Office του \href{https://www.esa.int/}{Ευρωπαϊκού Οργανισμού Διαστήματος}, στα πλαίσια του \href{https://www.esa.int/Education/CubeSats_-_Fly_Your_Satellite/}{προγράμματος Fly Your Satellite!}
+
+\par Οι απόψεις που εκφράζονται στο παρόν από τους συγγραφείς δεν μπορούν \smallcaps{σε καμια περιπτωση να θεωρηθει πως εκφραζουν} την επίσημη άποψη, ή υποστήριξη, του Ευρωπαϊκού Οργανισμού Διαστήματος.
+
+\end{fullwidth}
+
+% r.5 contents
+\tableofcontents
+
+\begin{fullwidth}
+\listoffigures
+
+\listoftables
+
+\chapter*{Μεταφράσεις ξενόγλωσσης ορολογίας}
+
+\bgroup
+\setlength\parskip{.8ex}
+\printacronyms[include=glossary,template=glossary]
+\egroup
+
+%\chapter*{List of Acronyms}
+%\acuseall%
+\bgroup
+\setlength\parskip{1ex}
+\printacronyms[pages={display=all,seq/use=false},exclude = {glossary},name = {Ακρωνύμια}]
+\egroup
+
+\end{fullwidth}
+
+% r.9 introduction
+\cleardoublepage
+
+\chapter*{Περίληψη}
+
+\begin{fullwidth}
+	\centering
+	\begin{minipage}{107mm}
+		\justify
+		\g{Η επικοινωνία των υποσυστημάτων σε ένα νάνοδορυφόρο αποτελεί έναν κρίσιμο παράγοντα για την επιτυχία της διαστημικής αποστολής. Σε αυτό το πλαίσιο, η παρούσα διπλωματική εργασία εστιάζει στην χρήση του }CAN Bus \g{ως πρωτοκόλλου επικοινωνίας για τη σύνδεση και αλληλεπίδραση υποσυστημάτων σε έναν νάνοδορυφόρο μεγέθους} 3U (Units)\g{. Αναλύοντας το υλικό, το πρωτόκολλο και το λογισμικό που υλοποιήθηκε, αυτή η εργασία θα εξετάσει τις τεχνικές, τις προκλήσεις και τις λύσεις που εφαρμόστηκαν για τη διασφάλιση αξιόπιστης επικοινωνίας μεταξύ των υποσυστημάτων ενός τέτοιου δορυφόρου. Η εργασία έγινε στα πλάσια υλοποίησης του νανοδορυφόρου AcubeSAT, η οποία υλοποιείται από φοιτητές, κυρίως του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης. Στην περίπτωση του νανοδορυφόρου} AcubeSAT \g{το} CAN Bus \g{χρησιμοποιείται για την μεταφορά εντολών, δεδομένων πειράματος, και την ανίχνευση σφαλμάτων μεταξύ υποσυστημάτων.}
+    \end{minipage}
+\end{fullwidth}
+
+
+\chapter*{Ευχαριστίες}
+
+\g{%
+% TODO
+}
+
+\mainmatter
+
+\chapter{Εισαγωγή}
+\section{Διαστημικές Αποστολές}
+Από τα τέλη της δεκαετίας του 1950, η ανθρωπότητα στράφηκε προς το διάστημα ως πηγή νέων επιστημονικών μελετών. Από τότε, δορυφόροι, τηλεσκόπια και επανδρωμένοι σταθμοί στο διάστημα έχουν προσφέρει γνώσεις ανεκτίμητης αξίας. Ανέκαθεν, το διαστημικό περιβάλλον είναι αφιλόξενο και γεμάτο προκλήσεις, που δεν συναντούμε στην Γη. Από τα πρώτα δευτερόλεπτα της αποστολής, το σύστημα πρέπει να αντέξει τις έντονες δονήσεις και την πίεση που συναντά στην εκτόξευση. Στη συνέχεια, σκαρφαλώντοντας την ατμόσφαιρα, το σύστημα θα αποσυμπιεστεί έως ότου φτάσει πρακτικά μηδενική πίεση. Λόγω του κενού αέρος, δεν υπάρχει αποδοτικός τρόπος διάδοσης της θερμότητας του συστήματος. Με αυτά τα δεδομένα είναι συνετό ότι τα διαστημικά συστήματα πρέπει εξετάζονται σε ακραίες συνθήκες θερμοκρασίας, πίεσης και μηχανικών δυνάμεων. Παρά τις αυστηρές προδιαγραφές και ενδελεχείς δοκιμές, ένα σημαντικό ποσοστό διαστημικών αποστολών καταλήγουν σε αποτυχία. Ένα πολύ γνωστό παράδειγμα αποτυχίας είναι του \emph{Space Shuttle Challenger}, το οποίο εξερράγη κατά την εκτόξευση. Στο περιστατικό έχασαν την ζωή τους οι επτά άνθρωποι που βρίσκοταν στο διαστημόπλοιο. Η αναφορά της NASA που αναλύει το συμβάν έδειξε ότι το πρόβλημα ήταν στη στεγανοποίηση ενός %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Μη-επανδρωμένοι δορυφόροι}
+\section{Νανοδορυφόροι}
+\section{Ο νανοδορυφόρος AcubeSAT}
+Ο νανοδορυφόρος AcubeSAT δημιουργήθηκε από την φοιτητική ομάδα SpaceDot, υπό την αιγίδα του προγράμματος Fly Your Satellite! 3, του εκπαιδευτικού γραφείου του Ευρωπαϊκού Οργανισμού Διαστήματος. Η ομάδα εδρεύει στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης, το οποίο παρέχει χώρους εργασίας και χρηματοδότηση, ενώ παράλληλα οι καθηγητές του συνδράμουν στην προσπάθεια της ομάδας. Το project απασχολεί περίπου 90 φοιτητές, οι οποίοι φοιτούν κατά κύριο λόγο φοιτούν στο ΑΠΘ. Ο AcubeSAT είναι ένας νανοδορυφόρος τύπου CubeSat, μεγέθους 3U, με διαστάσεις ($x$ εκατοστά) και βάρος $y$ γραμμάρια. Ένα CubeSat συνήθως δημιουργείται ως δευτερεύον payload ενός δορυφόρου, και \emph{αφήνεται} σε τροχιά γύρω από την Γη. Το CubeSat θα λειτουργεί εντελώς αυτόνομα και δεν θα είναι συνδεδεμένο με κανένα τρόπο με το δορυφόρο μετά την έναρξη λειτουργίας του. Καθώς ένα CubeSat δεν έχει τρόπο για να επηρεάσει την τροχιά του, παρά μόνο τον προσανατολισμό του, είναι απαραίτητο εξ'αρχής να τεθεί σε τροχιά που καλύπτει τις ανάγκες του. Στην περίπτωση του AcubeSAT, αυτή η τροχιά θα είναι σε ύψος περίπου 500 χλμ πάνω από την επιφάνεια της Γης. Η τροχιά θα έχει αρκετή ταχύτητα ώστε να διαρκέσει ενάμιση χρόνο προτού ο νανοδορυφόρος πέσει στην ατμόσφαιρα και καταστραφεί λόγω θερμότητας κατά την επανείσοδο.
+
+\section{Αποστολή}
+Ο σκοπός του AcubeSAT είναι να μελετήσει την ανάπτυξη των ευκαρυωτικών κυττάρων του \emph{Saccharomyces cerevisiae} σε συνθήκες διαστήματος. Ο παραπάνω οργανισμός είναι ένας μύκητας, ο οποίος ανήκει %. 
+Χρησιμοποιώντας την ομοιότητα που εμφανίζει με τα ανθρώπινα κύτταρα μπορούμε να εξάγουμε συμπεράσματα για την ανάπτυξη των κυττάρων σε μικροσκοπικό επίπεδο κατά τη διάρκεια της ζωής στο διάστημα. Όντας έξω από την προστατευτική ατμόσφαιρα της Γης, τα κύτταρα δέχονται μεγαλύτερες δόσεις ακτινοβολίας, που προέρχεται από %.
+Συγκεκριμένα, σκοπός είναι να μελετηθεί η επιρροή της έλλειψης βαρύτητας και η ακτινοβολία που αναφέρθηκε παραπάνω σε τρείς καλλιέργιες του \emph{Saccharomyces cerevisiae}, συγκρίνοντας την ανάπτυξή τους στο διάστημα σε σύγκριση με τη Γη.
+\section{Υποσυστήματα}
+Ο νανοδορυφόρος αποτελείται από 4 ξεχωριστά υποσυστήματα, τα οποία στεγάζονται στο πάνω μέρος του.
+\subsection{Υποσύστημα Προσδιορισμού και Ελέγχου Προσανατολισμού (\acs{ADCS})}
+Το υποσύστημα του \acs{ADCS} είναι υπεύθυνο για τον προσανατολισμό του δορυφόρου όσο αυτός βρίσκεται σε τροχιά. Για να το επιτύχει αυτό, χρησιμοποιούονται δύο μαγνητόμετρα υψηλής ακριβείας. Παρόλο που αρκούν οι μετρήσεις από ένα μόνο μανγητόμετρο, ο δορυφόρος έχει εξοπλιστεί με ένα δευτερεύον για περίπτωση όπου χρειαστεί για λόγους ανίχνευσης και αντιμετώπισης βλαβών. Για λόγους εξοικονόμησης ενέργειας, χρησιμοποιείται η τεχνική \textbf{cold redundancy}, όπου το δευτερεύον μαγνητόμετρο είναι απενεργοποιημένο έως ότου εντοπιστεί βλάβη στο κύριο.
+
+Το \acs{ADCS} λειτουργεί υπό τρία διαφορετικά προφίλ, για να καλύψει τις ανάγκες του δορυφόρου ανά πάσα στιγμή. Μόνο ένα προφίλ είναι ενεργοποιημένο τη φορά, και επιλέγονται αυτόματα ανάλογα με τη θέση και της δραστηριότητα του δορυφόρου.
+\begin{enumerate}
+    \item \textbf{Nadir Pointing}: Ο δορυφόρος στρέφει τη πλευρά +X ώστε να κοιτάζει προς τη Γη. Αυτή η κατεύθυνση στρέφει την κατευθυντική κεραία του δορυφόρου προς την κατάλληλη κατεύθυνση για να εξασφαλίσει ζεύξη, όταν αυτός βρίσκεται πάνω από τον σταθμό βάσης. 
+    \item \textbf{Sun Pointing}: Ο δορυφόρος στρέφεται προς τον ήλιο με κατάλληλο τρόπο, ώστε να μεγιστοποιηθεί η παραγωγή ενέργειας από τα ηλιακά πάνελ. Αυτό το προφίλ ενεργοποιείται ανάμεσα σε περάσματα από τον σταθμό βάσης, έτσι ώστε να εξασφαλιστεί θετικό ισοζύγιο ενέργειας στις μπαταρίες.
+    \item \textbf{Detumbling}: Ο δορυφόρος κάνει τις κατάλληλες κινήσεις για να φτάσει τη γωνιακή του ταχύτητα στο μηδέν. Αυτό επιτυγχάνεται με χρήση ενός απλού αλγορίθμου αυτομάτου ελέγχου και τις μετρήσεις του μαγντομέτρου. Αυτή η λειτουργία ενεργοποιείται όταν ο δορυφόρος δεν έχει άμεση ανάγκη να βρίσκεται σε κάποιο από τα άλλα προφίλ. Η διατήρηση της γωνιακής ταχύτητας κοντά στο μηδέν, βοηθά την ανάκτηση ελέγχου όταν χρειαστεί να προσανατολιστεί ο δορυφόρος σε άλλη κατεύθυνση. Ένα επιπλέον πλεονέκτημα είναι ότι βοηθά στην εξασφάλιση ραδιοζεύξης με τη χρήση της % μακριας κεραιας
+\end{enumerate}
+\subsection{Υποσύστημα Τηλεπικοινωνιών (\acs{COMMS})}
+Το υποσύστημα τηλεπικοινωνιών είναι υπεύθυνο για την επικοινωνία με το σταθμό βάσης, όσο ο δορυφόρος βρίσκεται σε τροχιά. 
+\subsection{Υποσύστημα Διαχείρισης Δεδομένων (\acs{OBDH})}
+\subsection{Υποσύστημα επιστημονικής μονάδας (\acs{SU})}
+\section{Ενσωματωμένα συστήματα}
+\section{Επικοινωνία των υποσυστημάτων}
+
+\chapter{CAN Bus}
+\section{Ιστορία}
+\section{Χρήση}
+\section{Το επίπεδο υλικού}
+\section{CAN-FD}
+
+\chapter{Σχεδίαση του νανοδορυφόρου}
+\section{Έρευνα data link budget}
+\section{Επιλογή πρωτοκόλλου μηνυμάτων CAN}
+\subsection{Ορισμός AcubeSAT specific πρωτοκόλλου CAN}
+
+\chapter{Υλοποίηση}
+% Open Source Project
+% Η συνεισφορά μου είναι MIT Licensed, MR Links
+% Ειναι reviewed απο συμφοιτητες
+\section{Περιορισμοί συστήματος} % static memory allocation, low ram etc
+\section{Η διαδρομή ενός μηνύματος}
+\section{Η μεταφορά μηνυμάτων ως πακέτα}
+\section{Ουρές μηνυμάτων με βάση το αναγνωριστικό του αποστολέα}
+\section{Διαφοροποίηση στα CAN-TP και non-CAN-TP μηνύματα}
+\section{Αποστολή μεγάλων μηνυμάτων}
+\section{Αποστολή φωτογραφιών του πειράματος}
+
+\chapter{Παραδείγματα χρήσης της υλοποίησης}
+\section{Χρήση στο Environmental Testing Campaign του OBC/ADCS Board}
+	\subsection{Μεταφορά παραμέτρων}
+	\subsection{Διακοπή λειτουργίας σε υψηλή θερμοκρασία}
+	\subsection{Εφαρμογή λύσης και επικύρωση ορθής λειτουργίας}
+\section{Χρήση στο Environmental Testing Campaign του Payload}
+
+%\backmatter
+\appendix
+
+\begin{fullwidth}
+\bgroup
+\printbibliography[heading=bibnumbered,title={Βιβλιογραφία}]
+\egroup
+\end{fullwidth}
+
+\end{document}
+
