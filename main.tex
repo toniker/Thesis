@@ -352,7 +352,10 @@ Copyright \copyright\ \the\year\ Αντώνιος Κερεμίδης
 \subsection{CAN-FD}
 
 \chapter{Σχεδίαση του νανοδορυφόρου}
-Κατά τη διάρκεια της σχεδίασης του νανοδορυφόρου, η ομάδα κλήθηκε να ερευνήσει την εφικτότητα του πλάνου για την επικοινωνία των υποσυστημάτων και να αναπτύξει λεπτομερρείς περιγραφές για το πώς θα επιτευχθεί αυτό. Στην παρούσα ενότητα θα παρουσιαστούν οι αποφάσεις που πάρθηκαν και οι λόγοι που οδήγησαν σε αυτές. 
+Κατά τη διάρκεια της σχεδίασης του νανοδορυφόρου, η ομάδα κλήθηκε να ερευνήσει την εφικτότητα του πλάνου για την επικοινωνία των υποσυστημάτων και να αναπτύξει λεπτομερρείς περιγραφές για το πώς θα επιτευχθεί αυτό. Στην παρούσα ενότητα θα παρουσιαστούν οι αποφάσεις που πάρθηκαν και οι λόγοι που οδήγησαν σε αυτές.
+
+\section{Λειτουργία δύο ανεξάρτητων διαύλων}
+% main & redundant bus even though CAN is error tolerant, explain advantages and picture of PC/104 schematic
 
 \section{Έρευνα data link budget}
 Το πρώτο ερώτημα που τέθηκε να απαντήσει η ομάδα είναι εάν οι προδιαγραφές του CAN καλύπτουν τις ανάγκες της αποστολής.
@@ -480,6 +483,8 @@ Copyright \copyright\ \the\year\ Αντώνιος Κερεμίδης
 
 \section{Αποστολή μεγάλων μηνυμάτων}
 
+\section{Χρήση δύο ανεξάρτητων διαύλων}
+% parameter for changing the active bus. each subsystem can send data on either bus and nothing wrong will happen. you can disable receiving on bus 1 if you're using 2, discuss advantages and disadvantages of that. talk about main/redundant naming scheme. talk about bus switchover messages
 \chapter{Χρήση της υλοποίησης}
 \section{Χρήση στο Environmental Testing Campaign του OBC/ADCS Board}
 	\subsection{Σκοπός environmental testing}
