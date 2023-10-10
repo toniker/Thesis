@@ -1,0 +1,53 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}pragma once}
+
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}etl/array.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}Peripheral\PYGZus{}Definitions.hpp\PYGZdq{}}
+
+\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{CAN}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * A CAN::Frame is a single message that is going to be sent over the CAN Bus. It could be part of collection of}
+\PYG{c+cm}{     * CAN::Frames composing a CAN::TPMessage, a Single Frame TP Message, or a non\PYGZhy{}TP Message.}
+\PYG{c+cm}{     *}
+\PYG{c+cm}{     * It consists of an ID which specifies the message\PYGZsq{}s function, as in DDJF\PYGZus{}OBDH + an etl::array that contains the}
+\PYG{c+cm}{     * message payload. A CAN::Frame is merely a carrier of information and has no functionality.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{Frame}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{public}\PYG{o}{:}
+\PYG{+w}{        }\PYG{c+cm}{/**}
+\PYG{c+cm}{         * The maximum data length that is currently configured in the peripheral.}
+\PYG{c+cm}{         */}
+\PYG{+w}{        }\PYG{k}{static}\PYG{+w}{ }\PYG{k}{constexpr}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{MaxDataLength}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{64}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+cm}{/**}
+\PYG{c+cm}{         * The right aligned ID of the message to be sent. Since the protocol doesn\PYGZsq{}t make use of extended IDs,}
+\PYG{c+cm}{         * they should be at most 11 bits long.}
+\PYG{c+cm}{         *}
+\PYG{c+cm}{         * @note The ID here must match one of the IDs found in DDJF\PYGZus{}OBDH.}
+\PYG{c+cm}{         */}
+\PYG{+w}{        }\PYG{k+kt}{uint32\PYGZus{}t}\PYG{+w}{ }\PYG{n}{id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+cm}{/**}
+\PYG{c+cm}{         * A array containing the message payload.}
+\PYG{c+cm}{         *}
+\PYG{c+cm}{         * @note Users should use data.push\PYGZus{}back() instead of data[i] while adding items to avoid errors caused by}
+\PYG{c+cm}{         * copying the array to the gatekeeper queue.}
+\PYG{c+cm}{         */}
+\PYG{+w}{        }\PYG{n}{etl}\PYG{o}{::}\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{MaxDataLength}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{data}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}\PYGZcb{};}
+
+\PYG{+w}{        }\PYG{n}{Frame}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{default}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{n}{Frame}\PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{+w}{ }\PYG{n}{id}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{id}\PYG{p}{(}\PYG{n}{id}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}\PYGZcb{};}
+
+\PYG{+w}{        }\PYG{n}{Frame}\PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{+w}{ }\PYG{n}{id}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{etl}\PYG{o}{::}\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{MaxDataLength}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{data}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{id}\PYG{p}{(}\PYG{n}{id}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{data}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}\PYGZcb{};}
+
+\PYG{+w}{        }\PYG{c+cm}{/**}
+\PYG{c+cm}{         * Zeroes out the current frame. Use this if you\PYGZsq{}re using a single static object in a recurring function.}
+\PYG{c+cm}{         */}
+\PYG{+w}{        }\PYG{k+kr}{inline}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{empty}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{data}\PYG{p}{.}\PYG{n}{fill}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{};}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

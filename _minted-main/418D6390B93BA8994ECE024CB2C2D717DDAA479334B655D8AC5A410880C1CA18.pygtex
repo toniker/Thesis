@@ -1,0 +1,63 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}pragma once}
+
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}CAN/ApplicationLayer.hpp\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}CAN/Frame.hpp\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}CAN/TPMessage.hpp\PYGZdq{}}
+
+\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{CAN}\PYG{o}{::}\PYG{n+nn}{TPProtocol}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Types of CAN\PYGZhy{}TP protocol frames.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k}{enum}\PYG{+w}{ }\PYG{n+nc}{Frame}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{Single}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0x00}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{First}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0x01}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Consecutive}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0x02}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Final}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0x03}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * How many bytes of information are contained in a consecutive frame}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k}{static}\PYG{+w}{ }\PYG{k}{constexpr}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{BytesInConsecutiveFrame}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{6}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * A pointer indicating the information starting point.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k}{static}\PYG{+w}{ }\PYG{k}{constexpr}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{BytesStartingPoint}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * The usable data length for a consecutive message.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k}{static}\PYG{+w}{ }\PYG{k}{constexpr}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{UsableDataLength}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Frame}\PYG{o}{::}\PYG{n}{MaxDataLength}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Creates a TPMessage object from a single frame, and passes it over to the parse function.}
+\PYG{c+cm}{     * @param message A received CAN::Frame.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{processSingleFrame}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Frame}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{message}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Receives a collection of messages from the Gatekeeper Task\PYGZsq{}s incomingQueue, and processes them.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{processMultipleFrames}\PYG{p}{();}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Processes the stored messages received and acts on their content accordingly.}
+\PYG{c+cm}{     * @param message the complete CAN\PYGZhy{}TP message.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{parseMessage}\PYG{p}{(}\PYG{n}{TPMessage}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{message}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Splits a CAN\PYGZhy{}TP Message into a collection of CAN frames according to the TP protocol and adds them to the CAN}
+\PYG{c+cm}{     * Gatekeeper Task queue.}
+\PYG{c+cm}{     * For more information about the CAN\PYGZhy{}TP Protocol check}
+\PYG{c+cm}{     * https://piembsystech.com/can\PYGZhy{}tp\PYGZhy{}protocol/}
+\PYG{c+cm}{     * @param message A CAN\PYGZhy{}TP message.}
+\PYG{c+cm}{     * @param isISR Whether the function is called from an Interrupt Service Routine. The function is simply passed to}
+\PYG{c+cm}{     * canGatekeeperTask\PYGZhy{}\PYGZgt{}send().}
+\PYG{c+cm}{     *}
+\PYG{c+cm}{     * @note For the consecutive frame fill loop idx + 1 is used since the first byte of each frame is already filled,}
+\PYG{c+cm}{     * however idx only reaches a maximum value of 62 which makes the position in the consecutiveFrame array valid.}
+\PYG{c+cm}{     * The message.data[] part reaches the maximum index of 62 for the first frame, continues from 63 up to 125 etc.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{createCANTPMessage}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{TPMessage}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{message}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isISR}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

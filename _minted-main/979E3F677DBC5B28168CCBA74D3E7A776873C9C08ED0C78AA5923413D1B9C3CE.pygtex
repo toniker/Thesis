@@ -1,0 +1,209 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}CAN/Driver.hpp\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}CAN/TPProtocol.hpp\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}CANGatekeeperTask.hpp\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}Logger.hpp\PYGZdq{}}
+
+\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n+nf}{CAN::Driver::convertDlcToLength}\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{dlc}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{static}\PYG{+w}{ }\PYG{k}{constexpr}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{msgLength}\PYG{p}{[]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{6U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{7U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{8U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{12U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{16U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{20U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{24U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{32U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{48U}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{64U}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{msgLength}\PYG{p}{[}\PYG{n}{dlc}\PYG{p}{];}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n+nf}{CAN::Driver::convertLengthToDLC}\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{length}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{dlc}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{length}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mi}{8U}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{dlc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{length}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{length}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mi}{12U}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{dlc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0x9U}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{length}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mi}{16U}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{dlc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0xAU}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{length}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mi}{20U}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{dlc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0xBU}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{length}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mi}{24U}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{dlc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0xCU}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{length}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mi}{32U}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{dlc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0xDU}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{length}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mi}{48U}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{dlc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0xEU}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{dlc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0xFU}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{dlc}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{CAN::Driver::mcan0TxFifoCallback}\PYG{p}{(}\PYG{k+kt}{uintptr\PYGZus{}t}\PYG{+w}{ }\PYG{n}{context}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{uint32\PYGZus{}t}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{MCAN0\PYGZus{}ErrorGet}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}PSR\PYGZus{}LEC\PYGZus{}Msk}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isStatusOk}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}NONE}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}LEC\PYGZus{}NO\PYGZus{}CHANGE}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{auto}\PYG{+w}{ }\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{static\PYGZus{}cast}\PYG{o}{\PYGZlt{}}\PYG{n}{AppStates}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{context}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{Transmit}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{isStatusOk}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{LOG\PYGZus{}ERROR}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Could not transmit CAN message. The status is \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{status}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{CAN::Driver::mcan0RxFifo0Callback}\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{numberOfMessages}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{uintptr\PYGZus{}t}\PYG{+w}{ }\PYG{n}{context}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{uint32\PYGZus{}t}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{MCAN0\PYGZus{}ErrorGet}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}PSR\PYGZus{}LEC\PYGZus{}Msk}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isStatusOk}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}NONE}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}LEC\PYGZus{}NO\PYGZus{}CHANGE}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{auto}\PYG{+w}{ }\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{static\PYGZus{}cast}\PYG{o}{\PYGZlt{}}\PYG{n}{AppStates}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{context}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{not}\PYG{p}{(}\PYG{n}{isStatusOk}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{Receive}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{size\PYGZus{}t}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{numberOfMessages}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{o}{++}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{memset}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{rxFifo0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x0}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{numberOfMessages}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{MCAN0\PYGZus{}RX\PYGZus{}FIFO0\PYGZus{}ELEMENT\PYGZus{}SIZE}\PYG{p}{));}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{MCAN0\PYGZus{}MessageReceiveFifo}\PYG{p}{(}\PYG{n}{MCAN\PYGZus{}RX\PYGZus{}FIFO\PYGZus{}0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{rxFifo0}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rxFifo0}\PYG{p}{.}\PYG{n}{data}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{6}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{TPProtocol}\PYG{o}{::}\PYG{n}{Frame}\PYG{o}{::}\PYG{n}{Single}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{logMessage}\PYG{p}{(}\PYG{n}{rxFifo0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Redundant}\PYG{p}{);}
+\PYG{+w}{                }\PYG{n}{TPProtocol}\PYG{o}{::}\PYG{n}{processSingleFrame}\PYG{p}{(}\PYG{n}{getFrame}\PYG{p}{(}\PYG{n}{rxFifo0}\PYG{p}{));}
+\PYG{+w}{                }\PYG{k}{continue}\PYG{p}{;}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{n}{canGatekeeperTask}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{addToIncoming}\PYG{p}{(}\PYG{n}{getFrame}\PYG{p}{(}\PYG{n}{rxFifo0}\PYG{p}{));}
+
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rxFifo0}\PYG{p}{.}\PYG{n}{data}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{6}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{TPProtocol}\PYG{o}{::}\PYG{n}{Frame}\PYG{o}{::}\PYG{n}{Final}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{TPProtocol}\PYG{o}{::}\PYG{n}{processMultipleFrames}\PYG{p}{();}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{CAN::Driver::mcan0RxFifo1Callback}\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{numberOfMessages}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{uintptr\PYGZus{}t}\PYG{+w}{ }\PYG{n}{context}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{uint32\PYGZus{}t}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{MCAN0\PYGZus{}ErrorGet}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}PSR\PYGZus{}LEC\PYGZus{}Msk}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isStatusOk}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}NONE}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}LEC\PYGZus{}NO\PYGZus{}CHANGE}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{auto}\PYG{+w}{ }\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{static\PYGZus{}cast}\PYG{o}{\PYGZlt{}}\PYG{n}{AppStates}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{context}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{not}\PYG{p}{(}\PYG{n}{isStatusOk}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{Receive}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{size\PYGZus{}t}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{numberOfMessages}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{o}{++}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{memset}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{rxFifo1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{MCAN0\PYGZus{}RX\PYGZus{}FIFO0\PYGZus{}ELEMENT\PYGZus{}SIZE}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{MCAN0\PYGZus{}MessageReceiveFifo}\PYG{p}{(}\PYG{n}{MCAN\PYGZus{}RX\PYGZus{}FIFO\PYGZus{}1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{rxFifo1}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{logMessage}\PYG{p}{(}\PYG{n}{rxFifo1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Main}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Application}\PYG{o}{::}\PYG{n}{parseMessage}\PYG{p}{(}\PYG{n}{getFrame}\PYG{p}{(}\PYG{n}{rxFifo1}\PYG{p}{));}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{CAN::Driver::mcan1TxFifoCallback}\PYG{p}{(}\PYG{k+kt}{uintptr\PYGZus{}t}\PYG{+w}{ }\PYG{n}{context}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{uint32\PYGZus{}t}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{MCAN1\PYGZus{}ErrorGet}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}PSR\PYGZus{}LEC\PYGZus{}Msk}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isStatusOk}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}NONE}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}LEC\PYGZus{}NO\PYGZus{}CHANGE}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{auto}\PYG{+w}{ }\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{static\PYGZus{}cast}\PYG{o}{\PYGZlt{}}\PYG{n}{AppStates}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{context}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{Transmit}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{isStatusOk}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{LOG\PYGZus{}ERROR}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Could not transmit CAN message. The status is \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{status}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{CAN::Driver::mcan1RxFifo0Callback}\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{numberOfMessages}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{uintptr\PYGZus{}t}\PYG{+w}{ }\PYG{n}{context}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{uint32\PYGZus{}t}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{MCAN1\PYGZus{}ErrorGet}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}PSR\PYGZus{}LEC\PYGZus{}Msk}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isStatusOk}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}NONE}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}LEC\PYGZus{}NO\PYGZus{}CHANGE}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{auto}\PYG{+w}{ }\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{static\PYGZus{}cast}\PYG{o}{\PYGZlt{}}\PYG{n}{AppStates}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{context}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{not}\PYG{p}{(}\PYG{n}{isStatusOk}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{Receive}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{size\PYGZus{}t}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{numberOfMessages}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{o}{++}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{memset}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{rxFifo0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x0}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{numberOfMessages}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{MCAN1\PYGZus{}RX\PYGZus{}FIFO0\PYGZus{}ELEMENT\PYGZus{}SIZE}\PYG{p}{));}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{MCAN1\PYGZus{}MessageReceiveFifo}\PYG{p}{(}\PYG{n}{MCAN\PYGZus{}RX\PYGZus{}FIFO\PYGZus{}0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{rxFifo0}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rxFifo0}\PYG{p}{.}\PYG{n}{data}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{6}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{TPProtocol}\PYG{o}{::}\PYG{n}{Frame}\PYG{o}{::}\PYG{n}{Single}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{TPProtocol}\PYG{o}{::}\PYG{n}{processSingleFrame}\PYG{p}{(}\PYG{n}{getFrame}\PYG{p}{(}\PYG{n}{rxFifo0}\PYG{p}{));}
+\PYG{+w}{                }\PYG{k}{continue}\PYG{p}{;}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{n}{canGatekeeperTask}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{addToIncoming}\PYG{p}{(}\PYG{n}{getFrame}\PYG{p}{(}\PYG{n}{rxFifo0}\PYG{p}{));}
+
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rxFifo0}\PYG{p}{.}\PYG{n}{data}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{6}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{TPProtocol}\PYG{o}{::}\PYG{n}{Frame}\PYG{o}{::}\PYG{n}{Final}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{TPProtocol}\PYG{o}{::}\PYG{n}{processMultipleFrames}\PYG{p}{();}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{CAN::Driver::mcan1RxFifo1Callback}\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{numberOfMessages}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{uintptr\PYGZus{}t}\PYG{+w}{ }\PYG{n}{context}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{uint32\PYGZus{}t}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{MCAN1\PYGZus{}ErrorGet}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}PSR\PYGZus{}LEC\PYGZus{}Msk}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isStatusOk}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}NONE}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{status}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}ERROR\PYGZus{}LEC\PYGZus{}NO\PYGZus{}CHANGE}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{auto}\PYG{+w}{ }\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{static\PYGZus{}cast}\PYG{o}{\PYGZlt{}}\PYG{n}{AppStates}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{context}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{not}\PYG{p}{(}\PYG{n}{isStatusOk}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{appState}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{Receive}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{size\PYGZus{}t}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{numberOfMessages}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{messageNumber}\PYG{o}{++}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{memset}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{rxFifo1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{MCAN1\PYGZus{}RX\PYGZus{}FIFO0\PYGZus{}ELEMENT\PYGZus{}SIZE}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{MCAN1\PYGZus{}MessageReceiveFifo}\PYG{p}{(}\PYG{n}{MCAN\PYGZus{}RX\PYGZus{}FIFO\PYGZus{}1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{rxFifo1}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{logMessage}\PYG{p}{(}\PYG{n}{rxFifo1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Redundant}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Application}\PYG{o}{::}\PYG{n}{parseMessage}\PYG{p}{(}\PYG{n}{getFrame}\PYG{p}{(}\PYG{n}{rxFifo1}\PYG{p}{));}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{CAN::Driver::send}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Frame}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{message}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{using}\PYG{+w}{ }\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{CAN}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{memset}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{txFifo}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{MCAN1\PYGZus{}TX\PYGZus{}FIFO\PYGZus{}BUFFER\PYGZus{}ELEMENT\PYGZus{}SIZE}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{txFifo}\PYG{p}{.}\PYG{n}{brs}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{txFifo}\PYG{p}{.}\PYG{n}{fdf}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{txFifo}\PYG{p}{.}\PYG{n}{xtd}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{txFifo}\PYG{p}{.}\PYG{n}{id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{writeId}\PYG{p}{(}\PYG{n}{message}\PYG{p}{.}\PYG{n}{id}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{txFifo}\PYG{p}{.}\PYG{n}{dlc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{convertLengthToDLC}\PYG{p}{(}\PYG{n}{message}\PYG{p}{.}\PYG{n}{data}\PYG{p}{.}\PYG{n}{size}\PYG{p}{());}
+
+\PYG{+w}{    }\PYG{n}{std}\PYG{o}{::}\PYG{n}{copy}\PYG{p}{(}\PYG{n}{message}\PYG{p}{.}\PYG{n}{data}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{(),}\PYG{+w}{ }\PYG{n}{message}\PYG{p}{.}\PYG{n}{data}\PYG{p}{.}\PYG{n}{end}\PYG{p}{(),}\PYG{+w}{ }\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{txFifo}\PYG{p}{.}\PYG{n}{data}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{AcubeSATParameters}\PYG{o}{::}\PYG{n}{obcCANBUSActive}\PYG{p}{.}\PYG{n}{getValue}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{Main}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{MCAN1\PYGZus{}MessageTransmitFifo}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{txFifo}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{MCAN0\PYGZus{}MessageTransmitFifo}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{txFifo}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{logMessage}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}RX\PYGZus{}BUFFER}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{rxBuf}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ActiveBus}\PYG{+w}{ }\PYG{n}{incomingBus}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{auto}\PYG{+w}{ }\PYG{n}{message}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{String}\PYG{o}{\PYGZlt{}}\PYG{n}{ECSSMaxStringSize}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}CAN Message: \PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{incomingBus}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{Main}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{message}\PYG{p}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}MCAN0 \PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{message}\PYG{p}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}MCAN1 \PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k+kt}{uint32\PYGZus{}t}\PYG{+w}{ }\PYG{n}{id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{readId}\PYG{p}{(}\PYG{n}{rxBuf}\PYG{p}{.}\PYG{n}{id}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{msgLength}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{convertDlcToLength}\PYG{p}{(}\PYG{n}{rxBuf}\PYG{p}{.}\PYG{n}{dlc}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{message}\PYG{p}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ID : \PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{etl}\PYG{o}{::}\PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{id}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{message}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{etl}\PYG{o}{::}\PYG{n}{format\PYGZus{}spec}\PYG{p}{().}\PYG{n}{hex}\PYG{p}{(),}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{message}\PYG{p}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+s}{\PYGZdq{} Length : \PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{etl}\PYG{o}{::}\PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{msgLength}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{message}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{message}\PYG{p}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+s}{\PYGZdq{} Data : \PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{idx}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{idx}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{msgLength}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{idx}\PYG{o}{++}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{etl}\PYG{o}{::}\PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{rxBuf}\PYG{p}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{idx}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{message}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{message}\PYG{p}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{n}{LOG\PYGZus{}INFO}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{message}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Frame}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{getFrame}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{MCAN\PYGZus{}RX\PYGZus{}BUFFER}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{rxBuffer}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Frame}\PYG{+w}{ }\PYG{n}{frame}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{messageLength}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{convertDlcToLength}\PYG{p}{(}\PYG{n}{rxBuffer}\PYG{p}{.}\PYG{n}{dlc}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{frame}\PYG{p}{.}\PYG{n}{id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{readId}\PYG{p}{(}\PYG{n}{rxBuffer}\PYG{p}{.}\PYG{n}{id}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{idx}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{idx}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{messageLength}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{idx}\PYG{o}{++}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{frame}\PYG{p}{.}\PYG{n}{data}\PYG{p}{.}\PYG{n}{at}\PYG{p}{(}\PYG{n}{idx}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rxBuffer}\PYG{p}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{idx}\PYG{p}{];}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{frame}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{initialize}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{MCAN0\PYGZus{}MessageRAMConfigSet}\PYG{p}{(}\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{mcan0MessageRAM}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{MCAN1\PYGZus{}MessageRAMConfigSet}\PYG{p}{(}\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{mcan1MessageRAM}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{MCAN0\PYGZus{}TxFifoCallbackRegister}\PYG{p}{(}\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{mcan0TxFifoCallback}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{Transmit}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{MCAN0\PYGZus{}RxFifoCallbackRegister}\PYG{p}{(}\PYG{n}{MCAN\PYGZus{}RX\PYGZus{}FIFO\PYGZus{}0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{mcan0RxFifo0Callback}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{Receive}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{MCAN0\PYGZus{}RxFifoCallbackRegister}\PYG{p}{(}\PYG{n}{MCAN\PYGZus{}RX\PYGZus{}FIFO\PYGZus{}1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{mcan0RxFifo1Callback}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{Receive}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{MCAN1\PYGZus{}TxFifoCallbackRegister}\PYG{p}{(}\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{mcan1TxFifoCallback}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{Transmit}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{MCAN1\PYGZus{}RxFifoCallbackRegister}\PYG{p}{(}\PYG{n}{MCAN\PYGZus{}RX\PYGZus{}FIFO\PYGZus{}0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{mcan1RxFifo0Callback}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{Receive}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{MCAN1\PYGZus{}RxFifoCallbackRegister}\PYG{p}{(}\PYG{n}{MCAN\PYGZus{}RX\PYGZus{}FIFO\PYGZus{}1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{mcan1RxFifo1Callback}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{CAN}\PYG{o}{::}\PYG{n}{Driver}\PYG{o}{::}\PYG{n}{Receive}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

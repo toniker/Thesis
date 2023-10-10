@@ -190,10 +190,13 @@ mincitenames=1,
 \LetLtxMacro{\cminted}{\minted}
 \let\endcminted\endminted
 \xpretocmd{\cminted}{\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}}{}{}
-\definecolor{mintedbg}{rgb}{0.95,0.95,0.93}
+\definecolor{mintedbg}{rgb}{1,1,1}
 \setminted{
 	bgcolor=mintedbg,
-	tabsize=2
+	tabsize=2,
+	fontsize=\footnotesize,
+	linenos,
+	breaklines
 }
 \setminted[text]{baselinestretch=0.8}
 
