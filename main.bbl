@@ -1,0 +1,80 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{UARTNetworks}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4b37f3c4423bc634aa89d541382d6dbe}{%
+           family={Automation},
+           familyi={A\bibinitperiod},
+           given={Control},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b37f3c4423bc634aa89d541382d6dbe}
+      \strng{fullhash}{4b37f3c4423bc634aa89d541382d6dbe}
+      \strng{bibnamehash}{4b37f3c4423bc634aa89d541382d6dbe}
+      \strng{authorbibnamehash}{4b37f3c4423bc634aa89d541382d6dbe}
+      \strng{authornamehash}{4b37f3c4423bc634aa89d541382d6dbe}
+      \strng{authorfullhash}{4b37f3c4423bc634aa89d541382d6dbe}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://control.com/textbook/digital-data-acquisition-and-networks/eiatia-232-422-and-485-networks/}}
+      \field{note}{[Online; accessed 15-November-2023]}
+      \field{title}{{EIA/TIA-232, 422, and 485 Networks}}
+    \endentry
+    \entry{DDJF_OBDH}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=bb8d9c7a5cd47f760019473245b06785}{%
+           family={Kanavouras},
+           familyi={K\bibinitperiod},
+           given={Konstantinos},
+           giveni={K\bibinitperiod}}}%
+        {{hash=78466c2cb3d7f457484c3c6b3c35f728}{%
+           family={Pavlakis},
+           familyi={P\bibinitperiod},
+           given={Grigorios},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d7b0e509153bc4f52a02788b07f2c31}
+      \strng{fullhash}{9d7b0e509153bc4f52a02788b07f2c31}
+      \strng{bibnamehash}{9d7b0e509153bc4f52a02788b07f2c31}
+      \strng{authorbibnamehash}{9d7b0e509153bc4f52a02788b07f2c31}
+      \strng{authornamehash}{9d7b0e509153bc4f52a02788b07f2c31}
+      \strng{authorfullhash}{9d7b0e509153bc4f52a02788b07f2c31}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{{AcubeSAT OBDH DDJF}}}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_OBDH.pdf
+      \endverb
+      \verb{url}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_OBDH.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

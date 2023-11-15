@@ -2,8 +2,6 @@ import os
 
 cwd = os.getcwd()
 
-os.system(f"pdflatex -shell-escape -halt-on-error main.tex")
-
 extra_files = [
     "acronyms.aux",
     "acronyms.fdb_latexmk",
@@ -27,6 +25,14 @@ extra_files = [
     "main.run.xml",
     "main.toc",
 ]
+
+for file in extra_files:
+    try:
+        os.remove(os.path.join(cwd, file))
+    except FileNotFoundError:
+        pass
+
+os.system(f"pdflatex -shell-escape -halt-on-error main.tex")
 
 for file in extra_files:
     try:
