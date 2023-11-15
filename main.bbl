@@ -36,8 +36,8 @@
       \strng{authorbibnamehash}{164382be75a098e236f0f9959ddaf598}
       \strng{authornamehash}{164382be75a098e236f0f9959ddaf598}
       \strng{authorfullhash}{164382be75a098e236f0f9959ddaf598}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{Mission Disposal Analysis Report}}}
@@ -62,8 +62,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/1u-cubesat-platform/}}
@@ -83,8 +83,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/3u-cubesat-platform/}}
@@ -104,8 +104,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{3}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/6u-cubesat-platform/}}
@@ -125,13 +125,66 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{4}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/12u-cubesat-platform/}}
       \field{note}{[Online; accessed 15-November-2023]}
       \field{title}{{12U CubeSat Platform}}
+    \endentry
+    \entry{DDJF_AOCS}{misc}{}
+      \name{author}{6}{}{%
+        {{hash=164dc5aad06e040cd4c480088b2b97af}{%
+           family={Savvidis},
+           familyi={S\bibinitperiod},
+           given={Georgios},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c79204a668b6fab9443d8842af5a4c15}{%
+           family={Voulgarakis},
+           familyi={V\bibinitperiod},
+           given={Romanos},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8c183eb489017acdaa7379a41d0e9e25}{%
+           family={Papafotiou},
+           familyi={P\bibinitperiod},
+           given={Theodoros},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1b2df78b1572836dbea66a4aaf10ab82}{%
+           family={Moustakas},
+           familyi={M\bibinitperiod},
+           given={Vasileios},
+           giveni={V\bibinitperiod}}}%
+        {{hash=d850c384b845eb1930683e7c827ff233}{%
+           family={Mylonas},
+           familyi={M\bibinitperiod},
+           given={Emmanouil},
+           giveni={E\bibinitperiod}}}%
+        {{hash=0226eaab57cf3aea38e89dad0d6742f7}{%
+           family={Pappa},
+           familyi={P\bibinitperiod},
+           given={Vasiliki},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0c906da547f8fc5fdafa18a57970ad2}
+      \strng{fullhash}{f0619fb85d4f871133c7fc0a57b448c2}
+      \strng{bibnamehash}{f0619fb85d4f871133c7fc0a57b448c2}
+      \strng{authorbibnamehash}{f0619fb85d4f871133c7fc0a57b448c2}
+      \strng{authornamehash}{d0c906da547f8fc5fdafa18a57970ad2}
+      \strng{authorfullhash}{f0619fb85d4f871133c7fc0a57b448c2}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{{AcubeSAT AOCS DDJF}}}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_AOCS.pdf
+      \endverb
+      \verb{url}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_AOCS.pdf
+      \endverb
     \endentry
     \entry{UARTNetworks}{misc}{}
       \name{author}{1}{}{%
@@ -147,8 +200,8 @@
       \strng{authorbibnamehash}{4b37f3c4423bc634aa89d541382d6dbe}
       \strng{authornamehash}{4b37f3c4423bc634aa89d541382d6dbe}
       \strng{authorfullhash}{4b37f3c4423bc634aa89d541382d6dbe}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://control.com/textbook/digital-data-acquisition-and-networks/eiatia-232-422-and-485-networks/}}
@@ -174,8 +227,8 @@
       \strng{authorbibnamehash}{9d7b0e509153bc4f52a02788b07f2c31}
       \strng{authornamehash}{9d7b0e509153bc4f52a02788b07f2c31}
       \strng{authorfullhash}{9d7b0e509153bc4f52a02788b07f2c31}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{AcubeSAT OBDH DDJF}}}
@@ -189,7 +242,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{DDJF_AOCS}
 \endrefsection
 \endinput
 
