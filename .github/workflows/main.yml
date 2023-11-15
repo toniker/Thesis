@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Set owner of working dir recurively (Linux)
         if: ${{ inputs.build_platform == 'linux' }}
-        run: sudo chown -R antonis .
+        run: sudo rm -rf /home/antonis/actions-runner/_work/Thesis/Thesis
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Compile LaTeX document
