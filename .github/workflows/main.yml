@@ -4,6 +4,9 @@ jobs:
   build_latex:
     runs-on: self-hosted
     steps:
+      - name: Set owner of working dir recurively (Linux)
+        if: ${{ inputs.build_platform == 'linux' }}
+        run: sudo chown -R $(whoami) .
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Compile LaTeX document
