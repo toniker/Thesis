@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Set owner of working dir recurively (Linux)
         if: ${{ inputs.build_platform == 'linux' }}
-        run: sudo chown -R $(whoami) .
+        run: sudo chown -R antonis .
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Compile LaTeX document
