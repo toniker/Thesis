@@ -11,6 +11,7 @@ jobs:
         with:
           root_file: main.tex
           latexmk_shell_escape: true
+          continue_on_error: true
         env:
           TEXINPUTS: ".:./custom_template//:"
       - name: Upload PDF file
