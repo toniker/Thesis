@@ -10,5 +10,10 @@ main.out
 main.pdf
 main.run.xml
 main.toc
-.DS_Store
 _minted-main/
+.DS_Store
+main.blg
+main.fdb_latexmk
+main.fls
+main.ilg
+main.ind
