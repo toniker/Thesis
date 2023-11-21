@@ -188,18 +188,16 @@
     \endentry
     \entry{UARTNetworks}{misc}{}
       \name{author}{1}{}{%
-        {{hash=4b37f3c4423bc634aa89d541382d6dbe}{%
-           family={Automation},
-           familyi={A\bibinitperiod},
-           given={Control},
-           giveni={C\bibinitperiod}}}%
+        {{hash=0e84804c919921f6c491ae8722a89c53}{%
+           family={{Control Automation}},
+           familyi={C\bibinitperiod}}}%
       }
-      \strng{namehash}{4b37f3c4423bc634aa89d541382d6dbe}
-      \strng{fullhash}{4b37f3c4423bc634aa89d541382d6dbe}
-      \strng{bibnamehash}{4b37f3c4423bc634aa89d541382d6dbe}
-      \strng{authorbibnamehash}{4b37f3c4423bc634aa89d541382d6dbe}
-      \strng{authornamehash}{4b37f3c4423bc634aa89d541382d6dbe}
-      \strng{authorfullhash}{4b37f3c4423bc634aa89d541382d6dbe}
+      \strng{namehash}{0e84804c919921f6c491ae8722a89c53}
+      \strng{fullhash}{0e84804c919921f6c491ae8722a89c53}
+      \strng{bibnamehash}{0e84804c919921f6c491ae8722a89c53}
+      \strng{authorbibnamehash}{0e84804c919921f6c491ae8722a89c53}
+      \strng{authornamehash}{0e84804c919921f6c491ae8722a89c53}
+      \strng{authorfullhash}{0e84804c919921f6c491ae8722a89c53}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
@@ -207,6 +205,39 @@
       \field{howpublished}{\url{https://control.com/textbook/digital-data-acquisition-and-networks/eiatia-232-422-and-485-networks/}}
       \field{note}{[Online; accessed 15-November-2023]}
       \field{title}{{EIA/TIA-232, 422, and 485 Networks}}
+    \endentry
+    \entry{FMEA}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=18a9cb28b2fba3eda4fcd7535d994813}{%
+           family={Retselis},
+           familyi={R\bibinitperiod},
+           given={Anastasios-Faidon},
+           giveni={A\bibinithyphendelim F\bibinitperiod}}}%
+        {{hash=bb8d9c7a5cd47f760019473245b06785}{%
+           family={Kanavouras},
+           familyi={K\bibinitperiod},
+           given={Konstantinos},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{46867fb9d9bb9cb51c2f019f9f415052}
+      \strng{fullhash}{46867fb9d9bb9cb51c2f019f9f415052}
+      \strng{bibnamehash}{46867fb9d9bb9cb51c2f019f9f415052}
+      \strng{authorbibnamehash}{46867fb9d9bb9cb51c2f019f9f415052}
+      \strng{authornamehash}{46867fb9d9bb9cb51c2f019f9f415052}
+      \strng{authorfullhash}{46867fb9d9bb9cb51c2f019f9f415052}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{{AcubeSAT FMEA File}}}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/FMEA%20file/FMEA.pdf
+      \endverb
+      \verb{url}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/FMEA%20file/FMEA.pdf
+      \endverb
     \endentry
     \entry{DDJF_OBDH}{misc}{}
       \name{author}{2}{}{%
@@ -227,8 +258,8 @@
       \strng{authorbibnamehash}{9d7b0e509153bc4f52a02788b07f2c31}
       \strng{authornamehash}{9d7b0e509153bc4f52a02788b07f2c31}
       \strng{authorfullhash}{9d7b0e509153bc4f52a02788b07f2c31}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{AcubeSAT OBDH DDJF}}}
@@ -240,6 +271,27 @@
       \verb{url}
       \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_OBDH.pdf
       \endverb
+    \endentry
+    \entry{FreeRTOSGuide}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3eb2c1a57a8160029f036e3dcbf84bf1}{%
+           family={{Amazon Web Services}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{fullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{bibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authorbibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authornamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authorfullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.freertos.org/fr-content-src/uploads/2018/07/161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf}}
+      \field{note}{[Online; accessed 20-November-2023]}
+      \field{title}{{Mastering the FreeRTOS™ Real Time Kernel}}
+      \field{year}{2018}
     \endentry
   \enddatalist
 \endrefsection
