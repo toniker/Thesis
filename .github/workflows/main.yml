@@ -11,7 +11,7 @@ jobs:
         with:
           root_file: main.tex
           latexmk_shell_escape: true
-          args: "-f"
+          args: "-pdf -file-line-error -f -interaction=nonstopmode"
         env:
           TEXINPUTS: ".:./custom_template//:"
       - name: Upload PDF file
