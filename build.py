@@ -3,13 +3,9 @@ import os
 cwd = os.getcwd()
 
 extra_files = [
-    "acronyms.aux",
     "acronyms.fdb_latexmk",
     "acronyms.fls",
     "acronyms.log",
-    "main.aux",
-    "main.bbl",
-    "main.bcf",
     "main.blg",
     "main.fdb_latexmk",
     "main.fls",
