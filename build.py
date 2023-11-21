@@ -32,7 +32,10 @@ for file in extra_files:
     except FileNotFoundError:
         pass
 
-os.system(f"pdflatex -shell-escape -halt-on-error main.tex")
+os.system(f"pdflatex -shell-escape -f -interaction=nonstopmode main")
+os.system(f"bibtex main")
+os.system(f"pdflatex -shell-escape -f -interaction=nonstopmode main")
+os.system(f"pdflatex -shell-escape -f -interaction=nonstopmode main")
 
 for file in extra_files:
     try:

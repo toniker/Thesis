@@ -19,36 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{MDAR_ARPT}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=164382be75a098e236f0f9959ddaf598}{%
-           family={Theophanes},
-           familyi={T\bibinitperiod},
-           given={Karydas},
-           giveni={K\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {SpaceDot}%
-      }
-      \strng{namehash}{164382be75a098e236f0f9959ddaf598}
-      \strng{fullhash}{164382be75a098e236f0f9959ddaf598}
-      \strng{bibnamehash}{164382be75a098e236f0f9959ddaf598}
-      \strng{authorbibnamehash}{164382be75a098e236f0f9959ddaf598}
-      \strng{authornamehash}{164382be75a098e236f0f9959ddaf598}
-      \strng{authorfullhash}{164382be75a098e236f0f9959ddaf598}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{{Mission Disposal Analysis Report}}}
-      \field{year}{2021}
-      \verb{urlraw}
-      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/SDMR/MDAR_ARPT.pdf
-      \endverb
-      \verb{url}
-      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/SDMR/MDAR_ARPT.pdf
-      \endverb
-    \endentry
     \entry{1UEndurosat}{misc}{}
       \name{author}{1}{}{%
         {{hash=440ccf050315eef2cf1fa8802dc37451}{%
@@ -62,8 +32,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/1u-cubesat-platform/}}
@@ -83,13 +53,43 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/3u-cubesat-platform/}}
       \field{note}{[Online; accessed 15-November-2023]}
       \field{title}{{3U CubeSat Platform}}
+    \endentry
+    \entry{MDAR_ARPT}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=164382be75a098e236f0f9959ddaf598}{%
+           family={Theophanes},
+           familyi={T\bibinitperiod},
+           given={Karydas},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SpaceDot}%
+      }
+      \strng{namehash}{164382be75a098e236f0f9959ddaf598}
+      \strng{fullhash}{164382be75a098e236f0f9959ddaf598}
+      \strng{bibnamehash}{164382be75a098e236f0f9959ddaf598}
+      \strng{authorbibnamehash}{164382be75a098e236f0f9959ddaf598}
+      \strng{authornamehash}{164382be75a098e236f0f9959ddaf598}
+      \strng{authorfullhash}{164382be75a098e236f0f9959ddaf598}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{{Mission Disposal Analysis Report}}}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/SDMR/MDAR_ARPT.pdf
+      \endverb
+      \verb{url}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/SDMR/MDAR_ARPT.pdf
+      \endverb
     \endentry
     \entry{6UEndurosat}{misc}{}
       \name{author}{1}{}{%
@@ -104,8 +104,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{3}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/6u-cubesat-platform/}}
@@ -125,8 +125,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{4}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/12u-cubesat-platform/}}
@@ -172,8 +172,8 @@
       \strng{authorbibnamehash}{f0619fb85d4f871133c7fc0a57b448c2}
       \strng{authornamehash}{d0c906da547f8fc5fdafa18a57970ad2}
       \strng{authorfullhash}{f0619fb85d4f871133c7fc0a57b448c2}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{AcubeSAT AOCS DDJF}}}
@@ -198,13 +198,34 @@
       \strng{authorbibnamehash}{0e84804c919921f6c491ae8722a89c53}
       \strng{authornamehash}{0e84804c919921f6c491ae8722a89c53}
       \strng{authorfullhash}{0e84804c919921f6c491ae8722a89c53}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://control.com/textbook/digital-data-acquisition-and-networks/eiatia-232-422-and-485-networks/}}
       \field{note}{[Online; accessed 15-November-2023]}
       \field{title}{{EIA/TIA-232, 422, and 485 Networks}}
+    \endentry
+    \entry{SpaceCAN}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=add7bbe1c03fd9909db2b5c1dde6b008}{%
+           family={{LibreCube}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \strng{fullhash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \strng{bibnamehash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \strng{authorbibnamehash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \strng{authornamehash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \strng{authorfullhash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://librecube.gitlab.io/standards/spacecan/}}
+      \field{note}{[Online; accessed 21-November-2023]}
+      \field{title}{{SpaceCAN}}
     \endentry
     \entry{FMEA}{misc}{}
       \name{author}{2}{}{%
@@ -225,8 +246,8 @@
       \strng{authorbibnamehash}{46867fb9d9bb9cb51c2f019f9f415052}
       \strng{authornamehash}{46867fb9d9bb9cb51c2f019f9f415052}
       \strng{authorfullhash}{46867fb9d9bb9cb51c2f019f9f415052}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{AcubeSAT FMEA File}}}
@@ -258,8 +279,8 @@
       \strng{authorbibnamehash}{9d7b0e509153bc4f52a02788b07f2c31}
       \strng{authornamehash}{9d7b0e509153bc4f52a02788b07f2c31}
       \strng{authorfullhash}{9d7b0e509153bc4f52a02788b07f2c31}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{AcubeSAT OBDH DDJF}}}
@@ -292,6 +313,61 @@
       \field{note}{[Online; accessed 20-November-2023]}
       \field{title}{{Mastering the FreeRTOS™ Real Time Kernel}}
       \field{year}{2018}
+    \endentry
+    \entry{LibreCubeSpec}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=add7bbe1c03fd9909db2b5c1dde6b008}{%
+           family={{LibreCube}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \strng{fullhash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \strng{bibnamehash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \strng{authorbibnamehash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \strng{authornamehash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \strng{authorfullhash}{add7bbe1c03fd9909db2b5c1dde6b008}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://librecube.gitlab.io/standards/board_specification/}}
+      \field{note}{[Online; accessed 21-November-2023]}
+      \field{title}{{LibreCube Board Specification}}
+    \endentry
+    \entry{SpaceRadiationForElectronics}{article}{}
+      \name{author}{2}{}{%
+        {{hash=95172f4159d6af7ba5f25c1afc9f45b9}{%
+           family={Stassinopoulos},
+           familyi={S\bibinitperiod},
+           given={E.G.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=3df5c9c7b99499ebcd38fa434e58ba25}{%
+           family={Raymond},
+           familyi={R\bibinitperiod},
+           given={J.P.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{e90d5fa7fdfff70f18bc49d08357215b}
+      \strng{fullhash}{e90d5fa7fdfff70f18bc49d08357215b}
+      \strng{bibnamehash}{e90d5fa7fdfff70f18bc49d08357215b}
+      \strng{authorbibnamehash}{e90d5fa7fdfff70f18bc49d08357215b}
+      \strng{authornamehash}{e90d5fa7fdfff70f18bc49d08357215b}
+      \strng{authorfullhash}{e90d5fa7fdfff70f18bc49d08357215b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the IEEE}
+      \field{number}{11}
+      \field{title}{The space radiation environment for electronics}
+      \field{volume}{76}
+      \field{year}{1988}
+      \field{pages}{1423\bibrangedash 1442}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1109/5.90113
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
