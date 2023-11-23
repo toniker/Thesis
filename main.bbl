@@ -327,8 +327,8 @@
       \strng{authornamehash}{add7bbe1c03fd9909db2b5c1dde6b008}
       \strng{authorfullhash}{add7bbe1c03fd9909db2b5c1dde6b008}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://librecube.gitlab.io/standards/board_specification/}}
@@ -354,8 +354,8 @@
       \strng{authorbibnamehash}{e90d5fa7fdfff70f18bc49d08357215b}
       \strng{authornamehash}{e90d5fa7fdfff70f18bc49d08357215b}
       \strng{authorfullhash}{e90d5fa7fdfff70f18bc49d08357215b}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the IEEE}
