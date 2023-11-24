@@ -32,8 +32,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/1u-cubesat-platform/}}
@@ -53,8 +53,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{2}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/3u-cubesat-platform/}}
@@ -78,8 +78,8 @@
       \strng{authorbibnamehash}{164382be75a098e236f0f9959ddaf598}
       \strng{authornamehash}{164382be75a098e236f0f9959ddaf598}
       \strng{authorfullhash}{164382be75a098e236f0f9959ddaf598}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{Mission Disposal Analysis Report}}}
@@ -104,8 +104,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{3}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/6u-cubesat-platform/}}
@@ -125,8 +125,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{4}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/12u-cubesat-platform/}}
