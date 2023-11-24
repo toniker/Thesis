@@ -15,3 +15,6 @@ o:
 
 c:
 	docker run --rm -it -v $(current_dir):/src -w /src zydou/texlive:latest latexmk -c
+
+biber:
+	docker run --rm -it -v $(current_dir):/src -w /src zydou/texlive:latest biber main
