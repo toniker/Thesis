@@ -206,6 +206,68 @@
       \field{note}{[Online; accessed 15-November-2023]}
       \field{title}{{EIA/TIA-232, 422, and 485 Networks}}
     \endentry
+    \entry{TSVCD}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5158c50b930bc2c1dadab624f700f102}{%
+           family={{AcubeSAT Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SpaceDot}%
+      }
+      \strng{namehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{fullhash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{bibnamehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{authorbibnamehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{authornamehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{authorfullhash}{5158c50b930bc2c1dadab624f700f102}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{{Technical Specification - Verification Control Document}}}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://gitlab.com/acubesat/systems-engineering/ts-vcd/-/blob/master/ASAT_TS-VCD_2020-07-31_v1.1.xlsx
+      \endverb
+      \verb{url}
+      \verb https://gitlab.com/acubesat/systems-engineering/ts-vcd/-/blob/master/ASAT_TS-VCD_2020-07-31_v1.1.xlsx
+      \endverb
+    \endentry
+    \entry{ECSS-E-ST-10-06C}{report}{}
+      \name{author}{1}{}{%
+        {{hash=d1470a9c95149c770bd2da8b9b58fc5f}{%
+           family={{ECSS Secretariat}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {European Space Agency}%
+      }
+      \strng{namehash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \strng{fullhash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \strng{bibnamehash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \strng{authorbibnamehash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \strng{authornamehash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \strng{authorfullhash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This Standard addresses the process for and the content of the Technical requirements specification (TS).}
+      \field{day}{6}
+      \field{month}{3}
+      \field{title}{{{ECSS-E-ST-10-06C}} – {{Technical requirements specification}}}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ecss.nl/standard/ecss-e-st-10-06c-technical-requirements-specification/
+      \endverb
+      \verb{url}
+      \verb https://ecss.nl/standard/ecss-e-st-10-06c-technical-requirements-specification/
+      \endverb
+    \endentry
     \entry{SpaceCAN}{misc}{}
       \name{author}{1}{}{%
         {{hash=add7bbe1c03fd9909db2b5c1dde6b008}{%
@@ -293,6 +355,87 @@
       \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_OBDH.pdf
       \endverb
     \endentry
+    \entry{ECSS-E-ST-70-41C}{report}{}
+      \name{author}{1}{}{%
+        {{hash=d1470a9c95149c770bd2da8b9b58fc5f}{%
+           family={{ECSS Secretariat}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {European Space Agency}%
+      }
+      \strng{namehash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \strng{fullhash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \strng{bibnamehash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \strng{authorbibnamehash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \strng{authornamehash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \strng{authorfullhash}{d1470a9c95149c770bd2da8b9b58fc5f}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This Standard addresses the utilization of telecommand packets and telemetry packets for the purposes of remote monitoring and control of spacecraft subsystems and payloads.}
+      \field{day}{15}
+      \field{month}{4}
+      \field{title}{{{ECSS-E-ST-70-41C}} – {{Telemetry}} and Telecommand Packet Utilization}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ecss.nl/standard/ecss-e-st-70-41c-space-engineering-telemetry-and-telecommand-packet-utilization-15-april-2016/
+      \endverb
+      \verb{url}
+      \verb https://ecss.nl/standard/ecss-e-st-70-41c-space-engineering-telemetry-and-telecommand-packet-utilization-15-april-2016/
+      \endverb
+    \endentry
+    \entry{DDJF_OBSW}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=bb8d9c7a5cd47f760019473245b06785}{%
+           family={Kanavouras},
+           familyi={K\bibinitperiod},
+           given={Konstantinos},
+           giveni={K\bibinitperiod}}}%
+        {{hash=57c88cf05dbfd9be3deb74346dea4f54}{%
+           family={Kozaris},
+           familyi={K\bibinitperiod},
+           given={Ioannis},
+           giveni={I\bibinitperiod}}}%
+        {{hash=24a1e86618e881ae32aa76bbde357502}{%
+           family={Theocharis},
+           familyi={T\bibinitperiod},
+           given={Athanasios},
+           giveni={A\bibinitperiod}}}%
+        {{hash=78466c2cb3d7f457484c3c6b3c35f728}{%
+           family={Pavlakis},
+           familyi={P\bibinitperiod},
+           given={Grigorios},
+           giveni={G\bibinitperiod}}}%
+        {{hash=fad75d8a544656fc27666c5851e2f6f4}{%
+           family={Stoupis},
+           familyi={S\bibinitperiod},
+           given={Dimitrios},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{58c463184ff0656798cdefa448c8c8e4}
+      \strng{fullhash}{3b33cd32a6850c3433a58dfb05fff9e8}
+      \strng{bibnamehash}{3b33cd32a6850c3433a58dfb05fff9e8}
+      \strng{authorbibnamehash}{3b33cd32a6850c3433a58dfb05fff9e8}
+      \strng{authornamehash}{58c463184ff0656798cdefa448c8c8e4}
+      \strng{authorfullhash}{3b33cd32a6850c3433a58dfb05fff9e8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{{AcubeSAT OBSW DDJF}}}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_OBSW.pdf
+      \endverb
+      \verb{url}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_OBSW.pdf
+      \endverb
+    \endentry
     \entry{FreeRTOSGuide}{misc}{}
       \name{author}{1}{}{%
         {{hash=3eb2c1a57a8160029f036e3dcbf84bf1}{%
@@ -305,8 +448,8 @@
       \strng{authorbibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
       \strng{authornamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
       \strng{authorfullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.freertos.org/fr-content-src/uploads/2018/07/161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf}}
