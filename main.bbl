@@ -32,8 +32,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/1u-cubesat-platform/}}
@@ -53,8 +53,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/3u-cubesat-platform/}}
@@ -78,8 +78,8 @@
       \strng{authorbibnamehash}{164382be75a098e236f0f9959ddaf598}
       \strng{authornamehash}{164382be75a098e236f0f9959ddaf598}
       \strng{authorfullhash}{164382be75a098e236f0f9959ddaf598}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{Mission Disposal Analysis Report}}}
@@ -104,8 +104,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{3}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/6u-cubesat-platform/}}
@@ -125,8 +125,8 @@
       \strng{authornamehash}{440ccf050315eef2cf1fa8802dc37451}
       \strng{authorfullhash}{440ccf050315eef2cf1fa8802dc37451}
       \field{extraname}{4}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.endurosat.com/cubesat-store/cubesat-platforms/12u-cubesat-platform/}}
@@ -172,8 +172,8 @@
       \strng{authorbibnamehash}{f0619fb85d4f871133c7fc0a57b448c2}
       \strng{authornamehash}{d0c906da547f8fc5fdafa18a57970ad2}
       \strng{authorfullhash}{f0619fb85d4f871133c7fc0a57b448c2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{AcubeSAT AOCS DDJF}}}
@@ -198,8 +198,8 @@
       \strng{authorbibnamehash}{0e84804c919921f6c491ae8722a89c53}
       \strng{authornamehash}{0e84804c919921f6c491ae8722a89c53}
       \strng{authorfullhash}{0e84804c919921f6c491ae8722a89c53}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://control.com/textbook/digital-data-acquisition-and-networks/eiatia-232-422-and-485-networks/}}
@@ -221,8 +221,8 @@
       \strng{authorbibnamehash}{5158c50b930bc2c1dadab624f700f102}
       \strng{authornamehash}{5158c50b930bc2c1dadab624f700f102}
       \strng{authorfullhash}{5158c50b930bc2c1dadab624f700f102}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{Technical Specification - Verification Control Document}}}
@@ -251,8 +251,8 @@
       \strng{authornamehash}{d1470a9c95149c770bd2da8b9b58fc5f}
       \strng{authorfullhash}{d1470a9c95149c770bd2da8b9b58fc5f}
       \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This Standard addresses the process for and the content of the Technical requirements specification (TS).}
@@ -422,8 +422,8 @@
       \strng{authorbibnamehash}{3b33cd32a6850c3433a58dfb05fff9e8}
       \strng{authornamehash}{58c463184ff0656798cdefa448c8c8e4}
       \strng{authorfullhash}{3b33cd32a6850c3433a58dfb05fff9e8}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{AcubeSAT OBSW DDJF}}}
@@ -448,8 +448,8 @@
       \strng{authorbibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
       \strng{authornamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
       \strng{authorfullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.freertos.org/fr-content-src/uploads/2018/07/161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf}}
