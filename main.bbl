@@ -436,6 +436,85 @@
       \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_OBSW.pdf
       \endverb
     \endentry
+    \entry{datasheet}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5998bf99c9f587bb0118404bcf82b0b7}{%
+           family={Technology},
+           familyi={T\bibinitperiod},
+           given={Microchip},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{5998bf99c9f587bb0118404bcf82b0b7}
+      \strng{fullhash}{5998bf99c9f587bb0118404bcf82b0b7}
+      \strng{bibnamehash}{5998bf99c9f587bb0118404bcf82b0b7}
+      \strng{authorbibnamehash}{5998bf99c9f587bb0118404bcf82b0b7}
+      \strng{authornamehash}{5998bf99c9f587bb0118404bcf82b0b7}
+      \strng{authorfullhash}{5998bf99c9f587bb0118404bcf82b0b7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{{SAMV71Q21RT Radiation-Tolerant 32-bit Arm® Cortex®-M7 Microcontroller}}}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ww1.microchip.com/downloads/aemDocuments/documents/AERO/ProductDocuments/DataSheets/SAMV71Q21RT-DataSheet-DS60001555.pdf
+      \endverb
+      \verb{url}
+      \verb https://ww1.microchip.com/downloads/aemDocuments/documents/AERO/ProductDocuments/DataSheets/SAMV71Q21RT-DataSheet-DS60001555.pdf
+      \endverb
+    \endentry
+    \entry{sehr2018cpp}{book}{}
+      \name{author}{2}{}{%
+        {{hash=8da89cf2dbe96f8b771d0eb1ad4115cf}{%
+           family={Sehr},
+           familyi={S\bibinitperiod},
+           given={Viktor},
+           giveni={V\bibinitperiod}}}%
+        {{hash=ee4af0dc4d8449ab44287ef0e172f164}{%
+           family={Andrist},
+           familyi={A\bibinitperiod},
+           given={Bjorn},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Packt Publishing}%
+      }
+      \strng{namehash}{195ec78a8d4aaf48ab1c67923af29734}
+      \strng{fullhash}{195ec78a8d4aaf48ab1c67923af29734}
+      \strng{bibnamehash}{195ec78a8d4aaf48ab1c67923af29734}
+      \strng{authorbibnamehash}{195ec78a8d4aaf48ab1c67923af29734}
+      \strng{authornamehash}{195ec78a8d4aaf48ab1c67923af29734}
+      \strng{authorfullhash}{195ec78a8d4aaf48ab1c67923af29734}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781787120952}
+      \field{month}{1}
+      \field{title}{C++ High Performance}
+      \field{year}{2018}
+    \endentry
+    \entry{GCCManual}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4bd60f42ad66aa3d8da93ff0bc918129}{%
+           family={{Richard M. Stallman and the GCC Developer Community}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{4bd60f42ad66aa3d8da93ff0bc918129}
+      \strng{fullhash}{4bd60f42ad66aa3d8da93ff0bc918129}
+      \strng{bibnamehash}{4bd60f42ad66aa3d8da93ff0bc918129}
+      \strng{authorbibnamehash}{4bd60f42ad66aa3d8da93ff0bc918129}
+      \strng{authornamehash}{4bd60f42ad66aa3d8da93ff0bc918129}
+      \strng{authorfullhash}{4bd60f42ad66aa3d8da93ff0bc918129}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://gcc.gnu.org/onlinedocs/gcc-13.2.0/gcc.pdf}}
+      \field{title}{{Using the GNU Compiler Collection}}
+      \field{year}{2023}
+    \endentry
     \entry{FreeRTOSGuide}{misc}{}
       \name{author}{1}{}{%
         {{hash=3eb2c1a57a8160029f036e3dcbf84bf1}{%
@@ -448,8 +527,8 @@
       \strng{authorbibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
       \strng{authornamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
       \strng{authorfullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.freertos.org/fr-content-src/uploads/2018/07/161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf}}

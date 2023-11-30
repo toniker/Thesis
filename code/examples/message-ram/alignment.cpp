@@ -1,0 +1,1 @@
+uint8_t mcan0MessageRAM[MCAN0_MESSAGE_RAM_CONFIG_SIZE] __attribute__((aligned (32)));
