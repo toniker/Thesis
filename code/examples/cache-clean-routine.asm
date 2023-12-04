@@ -8,4 +8,4 @@ BNE    inner_loop                    ; If not branch back to inner_loop
 ADD    r1, r1, #0x40000000           ; Increment segment counter
 CMP    r1, #0x0                      ; Complete all segments
 BNE    outer_loop                    ; If not branch back to outer_loop
-                                        ; End of routine
+                                     ; End of routine
