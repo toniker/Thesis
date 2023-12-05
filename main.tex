@@ -463,7 +463,7 @@ Copyright \copyright\ \the\year\ Αντώνιος Κερεμίδης
 		\multicolumn{1}{|c|}{\cellcolor[HTML]{F0F0F1}{OBC-FUN-090}} & {The OBC shall be able to reprogram all on-board MCUs while in orbit.}                                                                                                         \\ \hline
 		\multicolumn{1}{|c|}{\cellcolor[HTML]{F0F0F1}{SYS-FUN-270}} & {\begin{tabular}[c]{@{}c@{}}All on-board MCUs shall be capable of remote reprogramming via TC in orbit\\ for all parts of the software excluding the bootloader.\end{tabular}} \\ \hline
 	\end{tabular}
-\end{table}
+\end{table*}
 
 Ένα παράδειγμα από τις απαιτήσεις του AcubeSAT φαίνεται στον \Cref{tab:requirements}.
 
@@ -723,7 +723,7 @@ Copyright \copyright\ \the\year\ Αντώνιος Κερεμίδης
 	\caption[Συνάρτηση εκκαθάρισης Data Cache]{Συνάρτηση εκκαθάρισης Data Cache σε ARMv7 Assembly}
 \end{figure*}
 
-Κατά τη διάρκεια της ανάπτυξης του λογισμικού, βρέθηκε ορθότερη μέθοδος για την διαχείριση της κρυφής μνήμης όσον αφορά τις διαδικασίες του διαύλου. Η μέθοδος περιλαμβάνει τον ορισμό μίας περιοχής μνήμης η οποία δεν υπάγεται στην πολιτική της κρυφής μνήμης. Για την υλοποίηση του μηχανισμού αυτού, απαιτούνται τρείς ενέργειες. Αρχικά, πρέπει να δημιουργήσουμε μία νέα περιοχή μνήμης στο linker script. Η δημιουργία της περιοχής περιλαμβάνεται στο \Cref{code:linker-diff}. Ο ορισμός απαιτεί δύο πεδία, την θέση της περιοχής στη μνήμη και το μέγεθός της. Καθώς το λογισμικό του μικροελεγκτή πριν την αλλαγή τοποθετούσε τη μνήμη RAM στη θέση \texttt{0x20400000} με μέγεθος \texttt{0x00060000} bytes, αποφασίστηκε η νέα περιοχή μνήμης να τοποθετηθεί στο τέλος της RAM. Για αυτό το σκοπό, πρώτα υπολογίστηκε το μέγεθος που απαιτεί η \texttt{Message RAM} για τα περιφερειακά MCAN0 και MCAN1. Αυτό έγινε ελέγχοντας τις μεταβλητές \mintinline{c++}|#define MCAN0_MESSAGE_RAM_CONFIG_SIZE     2964U| και \mintinline{c++}|#define MCAN1_MESSAGE_RAM_CONFIG_SIZE     2964U| στο αρχείο \texttt{plib\_mcan\_common.h} του λογισμικού του μικροελεγκτή. Καθώς χρειάζεται να οριστεί ένας πίνακας Message RAM για κάθε περιφερειακό από τα MCAN0 και MCAN1, συνολικά απαιτούνται 5928 byte. Στη διαμόρφωση της περιοχής μνήμης στο MPLAB δίνονται επιλογές για μεγέθη που είναι πολλαπλάσια του 2, οπότε η μικρότερη επιλογή που αρκεί είναι τα 8KB. Στη συνέχεια, υπολογίστηκε η θέση της περιοχής μνήμης, η οποία είναι ίση με την θέση της RAM συν το μέγεθος της RAM, μείον το μέγεθος των \texttt{Message RAM}. Το αποτέλεσμα είναι ίσο με \texttt{0x20400000 + 0x0060000 - 0x00002000 = 0x2045E000}. Τέλος, ορίστηκε το μέγεθος της περιοχής μνήμης ως \texttt{0x00002000} bytes. Η περιοχή μνήμης αυτή ονομάστηκε \texttt{SRAM\_NOCACHE} και ο ορισμός της περιλαμβάνεται στο \Cref{code:linker-diff}.
+Κατά τη διάρκεια της ανάπτυξης του λογισμικού, βρέθηκε ορθότερη μέθοδος για την διαχείριση της κρυφής μνήμης όσον αφορά τις διαδικασίες του διαύλου. Η μέθοδος περιλαμβάνει τον ορισμό μίας περιοχής μνήμης η οποία δεν υπάγεται στην πολιτική της κρυφής μνήμης. Για την υλοποίηση του μηχανισμού αυτού, απαιτούνται τρείς ενέργειες. Αρχικά, πρέπει να δημιουργήσουμε μία νέα περιοχή μνήμης στο linker script. Η δημιουργία της περιοχής περιλαμβάνεται στο \Cref{code:linker-diff}. Ο ορισμός απαιτεί δύο πεδία, την θέση της περιοχής στη μνήμη και το μέγεθός της. Καθώς το λογισμικό του μικροελεγκτή πριν την αλλαγή τοποθετούσε τη μνήμη RAM στη θέση \texttt{0x20400000} με μέγεθος \texttt{0x00060000} bytes, αποφασίστηκε η νέα περιοχή μνήμης να τοποθετηθεί στο τέλος της RAM. Για αυτό το σκοπό, πρώτα υπολογίστηκε το μέγεθος που απαιτεί η \texttt{Message RAM} για τα περιφερειακά MCAN0 και MCAN1. Αυτό έγινε ελέγχοντας τις μεταβλητές \mintinline{c++}|#define MCAN0_MESSAGE_RAM_CONFIG_SIZE     2964U| και \mintinline{c++}|#define MCAN1_MESSAGE_RAM_CONFIG_SIZE     2964U| στο αρχείο \texttt{plib\_mcan\_common.h} του λογισμικού του μικροελεγκτή. Καθώς χρειάζεται να οριστεί ένας πίνακας Message RAM για κάθε περιφερειακό από τα MCAN0 και MCAN1, συνολικά απαιτούνται 5928 byte. Στη διαμόρφωση της περιοχής μνήμης στο MPLAB δίνονται επιλογές για μεγέθη που είναι πολλαπλάσια του 2, οπότε η μικρότερη επιλογή που αρκεί είναι τα 8KB. Στη συνέχεια, υπολογίστηκε η θέση της περιοχής μνήμης, η οποία είναι ίση με την θέση της RAM συν το μέγεθος της, μείον το μέγεθος των \texttt{Message RAM}. Το αποτέλεσμα είναι ίσο με \texttt{0x20400000 + 0x0060000 - 0x00002000 = 0x2045E000}. Τέλος, ορίστηκε το μέγεθος της περιοχής μνήμης ως \texttt{0x00002000} bytes. Η περιοχή μνήμης αυτή ονομάστηκε \texttt{SRAM\_NOCACHE} και ο ορισμός της περιλαμβάνεται στο \Cref{code:linker-diff}.
 
 \marginnote{
 	Το linker script είναι ένα αρχείο κειμένου το οποίο περιέχει οδηγίες για τον linker του GCC. Ο linker είναι το τελευταίο πρόγραμμα που εκτελείται κατά τη διάρκεια της διαδικασίας μεταγλωττισμού. Ο linker συνδέει τα αρχεία αντικειμένου που παράγονται από τον compiler, και δημιουργεί το τελικό εκτελέσιμο αρχείο.
@@ -735,7 +735,7 @@ Copyright \copyright\ \the\year\ Αντώνιος Κερεμίδης
 	\caption[Ορισμός περιοχής στο linker script]{Ορισμός περιοχής στο linker script. Οι γραμμές που περιέχουν τελείες στην αρχή είναι αυτές που είναι απαραίτητες για τη δημιουργία μίας νέας περιοχής μνήμης}
 \end{figure*}
 
-Στη συνέχεια, πρέπει να ορίσουμε την περιοχή αυτή ως \mintinline{c++}|non-cacheable|, ώστε να μην υπάγεται στην πολιτική της κρυφής μνήμης. Η διαδικασία αυτή γίνεται χρησιμοποιώντας το MPLAB X IDE, όπως γίνεται και η πλειοψηφία ενεργειών διαμόρφωσης του μικροελεγκτή. Η διαδικασία αυτή περιλαμβάνει την ενεργοποίηση της Memory Protection Unit (MPU) του μικροελεγκτή, η οποία είναι υπεύθυνη για την επιβολή των περιορισμών πρόσβασης στη μνήμη. Η ενεργοποίηση της MPU γίνεται μέσω γραφικού περιβάλλοντος, και η ρύθμιση φαίνεται στο \Cref{fig:mpu-settings}. Από το γραφικό περιβάλλον ρυθμίζουμε τον τύπο της μνήμης σε αυτή την περιοχή ως \mintinline{c++}|non-cacheable|, και έπειτα πρέπει να ορίσουμε την διεύθυνση της περιοχής μνήμης αλλά και το μέγεθός της. Οι επιλογές περιγράφηκαν στην παραπάνω παράγραφο και οι αντίστοιχες ρυθμίσεις έγιναν στο γραφικό περιβάλλον.
+Στη συνέχεια, πρέπει να ορίσουμε την περιοχή αυτή ως \mintinline{c++}|non-cacheable|, ώστε να μην υπάγεται στην πολιτική της κρυφής μνήμης. Η διαδικασία αυτή γίνεται χρησιμοποιώντας το MPLAB X IDE, όπως γίνεται και η πλειοψηφία ενεργειών διαμόρφωσης του μικροελεγκτή. Η διαδικασία αυτή περιλαμβάνει την ενεργοποίηση της Memory Protection Unit (MPU) του μικροελεγκτή, η οποία είναι υπεύθυνη για την επιβολή των περιορισμών πρόσβασης στη μνήμη. Η ενεργοποίηση της MPU γίνεται μέσω γραφικού περιβάλλοντος, και η ρύθμιση φαίνεται στο \Cref{fig:mpu-settings}. Από το γραφικό περιβάλλον ρυθμίζουμε τον τύπο της μνήμης σε αυτή την περιοχή ως \mintinline{c++}|non-cacheable|, και έπειτα ορίσουζε την διεύθυνση της περιοχής μνήμης αλλά και το μέγεθός της. Οι επιλογές περιγράφηκαν στην παραπάνω παράγραφο και οι αντίστοιχες ρυθμίσεις έγιναν στο γραφικό περιβάλλον.
 
 \begin{figure*}
 	\includegraphics[width=0.9\linewidth]{images/mplab-mpu-settings.png}
@@ -966,6 +966,33 @@ Copyright \copyright\ \the\year\ Αντώνιος Κερεμίδης
 
 \subsection{Εξέταση λειτουργίας εφεδρικού διαύλου κατ'εντολή}
 \label{chap:switch-tc}
+Κατά την προσπάθεια επικύρωσης των προδιαγραφών του υποσυστήματος, η ομάδα αποφάσισε ότι οι περιβαλλοντικές δοκιμές του OBC είναι η κατάλληλη ευκαιρία για την κάλυψη των απαιτήσεων λειτουργίας του \Cref{tab:campaign-requirements}
+
+\begin{table*}
+    \centering
+    \caption[Απαιτήσεις σχετικές με το CAN Bus]{Απαιτήσεις σχετικές με το CAN Bus που καλύφθηκαν στο πλαίσιο του Environmental Testing Campaign.}
+    \label{tab:campaign-requirements}
+    \begin{tabular}{|p{0.45\linewidth}|p{0.45\linewidth}|}
+        \hline
+        \rowcolor[HTML]{4F5054}
+        \multicolumn{2}{|c|}{\color[HTML]{FFFFFF} Requirements} \\ \hline
+        \rowcolor[HTML]{F0F0F1} OBC-ADCS-TEST-001 & The ADCS and the OBC MCUs shall receive and execute TCs. \\ \hline
+        \rowcolor[HTML]{F0F0F1} OBC-ADCS-TEST-003 & The OBC and ADCS shall be able to exchange messages through the main CAN Bus. \\ \hline
+        \rowcolor[HTML]{F0F0F1} OBC-ADCS-TEST-004 & The OBC and ADCS shall be able to exchange messages through the redundant CAN Bus. \\ \hline
+    \end{tabular}
+\end{table*}
+
+\marginnote{
+	% Explain YAMCS, add links
+}
+Για το σκοπό αυτό αποφασίστηκε από την ομάδα να δημιουργηθεί μία υποδομή η οποία θα αλλάζει τον ενεργό δίαυλο, με βάση το περιεχόμενο των τηλε-εντολών που λαμβάνονται από τον υπολογιστή της ομάδας. Για τον έλεγχο του συστήματος, την ανάγνωση των μηνυμάτων τηλεμετρίας και την αποστολή τηλε-εντολών η ομάδα χρησιμοποίησε το YAMCS.
+
+\marginnote{
+	\href{https://gitlab.com/acubesat/obc/ecss-services}{Η υλοποίηση των ecss-services στο GitLab της ομάδας.}
+}
+Η μεταφορά τηλε-εντολών από το YAMCS ακολουθεί τα πρότυπα των ECSS στάνταρ και όπως είναι λογικό, το λογισμικό του μικροελεγκτή χρησιμοποιεί τις συναρτήσεις των ecss-services για να τις αναγνώσει. Η υλοποίηση των ecss-services περιλαμβάνει δύο πεδία, τα Service και Message Type. Το Service περιγράφει την υπηρεσία που θα εκτελέσει ο μικροελεγκτής, ενώ το Message περιγράφει τον τύπο της εντολής. Για την υλοποίηση της εντολής αποφασίστηκε να δημιουργηθεί ένα νέο ECSS Service, το οποίο είναι σχεδιασμένο για να καλύπτει μονάχα την απαιτούμενη τηλε-εντολή. Το έγγραφο των ECSS Services \dualcite{ECSS-E-ST-70-41C} αναφέρει ότι όλα τα services που είναι δεν ακολουθούν το στάνταρ πρέπει να έχουν αναγνωριστικό ServiceType πάνω από 128. Με τον παραπάνω περιορισμό, το νέο service χρησιμοποιεί το \mintinline{c++}|const uint8_t ServiceType = 129;|
+
+
 % Talk about YAMCS interface. ECSS TC messages. Custom ECSS Services. Calling a custom service and defining a custom command in YAMCS editor. Talk about switching the active bus based on the incoming message. Talk about verifying the bus switch using normal can messages that print out detailed logs.
 
 \subsection{Μεταφορά παραμέτρων και μηνυμάτων τηλε-εντολών/τηλεμετρίας}
@@ -1042,5 +1069,11 @@ Copyright \copyright\ \the\year\ Αντώνιος Κερεμίδης
 \newpage
 \section*{Definitions.hpp}
 \inputminted{cpp}{code/full-files/Definitions.hpp}
+\newpage
+\section*{EnvironmentalTestingService.hpp}
+\inputminted{cpp}{code/full-files/EnvironmentalTestingService.hpp}
+\newpage
+\section*{EnvironmentalTestingHelper.cpp}
+\inputminted{cpp}{code/full-files/EnvironmentalTestingHelper.cpp}
 \end{document}
 
