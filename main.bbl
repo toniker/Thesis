@@ -221,6 +221,7 @@
       \strng{authorbibnamehash}{5158c50b930bc2c1dadab624f700f102}
       \strng{authornamehash}{5158c50b930bc2c1dadab624f700f102}
       \strng{authorfullhash}{5158c50b930bc2c1dadab624f700f102}
+      \field{extraname}{1}
       \field{sortinit}{8}
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
@@ -590,6 +591,58 @@
       \verb{doi}
       \verb 10.1109/5.90113
       \endverb
+    \endentry
+    \entry{OBC_ADCS_EQM_VIBE_TSTP}{report}{}
+      \name{author}{1}{}{%
+        {{hash=5158c50b930bc2c1dadab624f700f102}{%
+           family={{AcubeSAT Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {AcubeSAT}%
+      }
+      \strng{namehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{fullhash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{bibnamehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{authorbibnamehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{authornamehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{authorfullhash}{5158c50b930bc2c1dadab624f700f102}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{03}
+      \field{number}{v1.4}
+      \field{title}{Vibration Test Specification \& Test Procedures}
+      \field{type}{Test Procedures}
+      \field{year}{2023}
+    \endentry
+    \entry{OBC_ADCS_EQM_TVAC_TSTP}{report}{}
+      \name{author}{1}{}{%
+        {{hash=5158c50b930bc2c1dadab624f700f102}{%
+           family={{AcubeSAT Team}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {AcubeSAT}%
+      }
+      \strng{namehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{fullhash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{bibnamehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{authorbibnamehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{authornamehash}{5158c50b930bc2c1dadab624f700f102}
+      \strng{authorfullhash}{5158c50b930bc2c1dadab624f700f102}
+      \field{extraname}{3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{03}
+      \field{number}{v1.4}
+      \field{title}{Thermal Vacuum Test Specification \& Test Procedures}
+      \field{type}{Test Procedures}
+      \field{year}{2023}
     \endentry
   \enddatalist
 \endrefsection
