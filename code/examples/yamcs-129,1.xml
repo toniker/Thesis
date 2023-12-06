@@ -1,0 +1,17 @@
+<MetaCommand name="TC(129,1)_change_active_CAN">
+    <BaseMetaCommand metaCommandRef="/pus/Header_TC">
+        <ArgumentAssignmentList>
+            <ArgumentAssignment argumentName="service_type_ID" argumentValue="129" />
+            <ArgumentAssignment argumentName="message_subtype_ID" argumentValue="1" />
+        </ArgumentAssignmentList>
+    </BaseMetaCommand>
+    <ArgumentList>
+        <Argument argumentTypeRef="/dt/active_CAN" name="active_can_bus" />
+    </ArgumentList>
+    <CommandContainer name="TC(129,420)_container">
+        <EntryList>
+            <ArgumentRefEntry argumentRef="active_can_bus" />
+        </EntryList>
+        <BaseContainer containerRef="/pus/Header_TC" />
+    </CommandContainer>
+</MetaCommand>
