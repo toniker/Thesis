@@ -186,6 +186,95 @@
       \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_AOCS.pdf
       \endverb
     \endentry
+    \entry{DDJF_TTC}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=231ee66c033b93797f33fc8f7f94c4b7}{%
+           family={Kapoglis},
+           familyi={K\bibinitperiod},
+           given={Konstantinos},
+           giveni={K\bibinitperiod}}}%
+        {{hash=24810ffcaa5a5c315a3e25803529d6f8}{%
+           family={Chatziargyriou},
+           familyi={C\bibinitperiod},
+           given={Eleftheria},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SpaceDot}%
+      }
+      \strng{namehash}{5bc1fff8ad3175d79ff7b89f1cc6cea0}
+      \strng{fullhash}{5bc1fff8ad3175d79ff7b89f1cc6cea0}
+      \strng{bibnamehash}{5bc1fff8ad3175d79ff7b89f1cc6cea0}
+      \strng{authorbibnamehash}{5bc1fff8ad3175d79ff7b89f1cc6cea0}
+      \strng{authornamehash}{5bc1fff8ad3175d79ff7b89f1cc6cea0}
+      \strng{authorfullhash}{5bc1fff8ad3175d79ff7b89f1cc6cea0}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{{AcubeSAT TTC DDJF}}}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_TTC.pdf
+      \endverb
+      \verb{url}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_TTC.pdf
+      \endverb
+    \endentry
+    \entry{DDJF_PL}{misc}{}
+      \name{author}{6}{}{%
+        {{hash=ed2bce7019ccee454862a000f98b8ab9}{%
+           family={Arampatzis},
+           familyi={A\bibinitperiod},
+           given={Asterios},
+           giveni={A\bibinitperiod}}}%
+        {{hash=89ae46082fa0850ac4e2fae874a69266}{%
+           family={Zaras},
+           familyi={Z\bibinitperiod},
+           given={Alexios},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6bd5b057abb60d708c7e0a37cf23f92a}{%
+           family={Matsatsos},
+           familyi={M\bibinitperiod},
+           given={Panagiotis},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ac5a0d3cc4eed964d0aa19a3ee585ea7}{%
+           family={Ousoultzoglou},
+           familyi={O\bibinitperiod},
+           given={Orestis},
+           giveni={O\bibinitperiod}}}%
+        {{hash=f9104056ffb8c350349744cf9a6dc66d}{%
+           family={Nikolopoulou},
+           familyi={N\bibinitperiod},
+           given={Drosoula},
+           giveni={D\bibinitperiod}}}%
+        {{hash=18cfa475fb0dddec069619ca8f04ede9}{%
+           family={Sandaltzopoulou},
+           familyi={S\bibinitperiod},
+           given={Elissavet},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{957750d5f3435ca745edc107c88d5ce4}
+      \strng{fullhash}{18f01aa193fd61123525f750fab90a58}
+      \strng{bibnamehash}{18f01aa193fd61123525f750fab90a58}
+      \strng{authorbibnamehash}{18f01aa193fd61123525f750fab90a58}
+      \strng{authornamehash}{957750d5f3435ca745edc107c88d5ce4}
+      \strng{authorfullhash}{18f01aa193fd61123525f750fab90a58}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{{AcubeSAT Payload DDJF}}}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_PL.pdf
+      \endverb
+      \verb{url}
+      \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_PL.pdf
+      \endverb
+    \endentry
     \entry{UARTNetworks}{misc}{}
       \name{author}{1}{}{%
         {{hash=0e84804c919921f6c491ae8722a89c53}{%
@@ -198,8 +287,8 @@
       \strng{authorbibnamehash}{0e84804c919921f6c491ae8722a89c53}
       \strng{authornamehash}{0e84804c919921f6c491ae8722a89c53}
       \strng{authorfullhash}{0e84804c919921f6c491ae8722a89c53}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://control.com/textbook/digital-data-acquisition-and-networks/eiatia-232-422-and-485-networks/}}
@@ -221,8 +310,8 @@
       \strng{authorbibnamehash}{7058e4bd76f877c52b621c942b30613c}
       \strng{authornamehash}{7058e4bd76f877c52b621c942b30613c}
       \strng{authorfullhash}{7058e4bd76f877c52b621c942b30613c}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{ISO 11898-1:2015}
@@ -249,8 +338,8 @@
       \strng{authorbibnamehash}{5998bf99c9f587bb0118404bcf82b0b7}
       \strng{authornamehash}{5998bf99c9f587bb0118404bcf82b0b7}
       \strng{authorfullhash}{5998bf99c9f587bb0118404bcf82b0b7}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{SAMV71Q21RT Radiation-Tolerant 32-bit Arm® Cortex®-M7 Microcontroller}}}
@@ -454,8 +543,8 @@
       \strng{authornamehash}{d1470a9c95149c770bd2da8b9b58fc5f}
       \strng{authorfullhash}{d1470a9c95149c770bd2da8b9b58fc5f}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This Standard addresses the utilization of telecommand packets and telemetry packets for the purposes of remote monitoring and control of spacecraft subsystems and payloads.}
@@ -505,8 +594,8 @@
       \strng{authorbibnamehash}{3b33cd32a6850c3433a58dfb05fff9e8}
       \strng{authornamehash}{58c463184ff0656798cdefa448c8c8e4}
       \strng{authorfullhash}{3b33cd32a6850c3433a58dfb05fff9e8}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{AcubeSAT OBSW DDJF}}}
@@ -604,8 +693,8 @@
       \strng{authornamehash}{add7bbe1c03fd9909db2b5c1dde6b008}
       \strng{authorfullhash}{add7bbe1c03fd9909db2b5c1dde6b008}
       \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://librecube.gitlab.io/standards/board_specification/}}
@@ -631,8 +720,8 @@
       \strng{authorbibnamehash}{e90d5fa7fdfff70f18bc49d08357215b}
       \strng{authornamehash}{e90d5fa7fdfff70f18bc49d08357215b}
       \strng{authorfullhash}{e90d5fa7fdfff70f18bc49d08357215b}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the IEEE}
