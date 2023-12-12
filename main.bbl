@@ -295,6 +295,29 @@
       \field{note}{[Online; accessed 15-November-2023]}
       \field{title}{{EIA/TIA-232, 422, and 485 Networks}}
     \endentry
+    \entry{bosch1991can}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=cb3ae85956c896ad85215f21440a58c0}{%
+           family={Bosch},
+           familyi={B\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{cb3ae85956c896ad85215f21440a58c0}
+      \strng{fullhash}{cb3ae85956c896ad85215f21440a58c0}
+      \strng{bibnamehash}{cb3ae85956c896ad85215f21440a58c0}
+      \strng{authorbibnamehash}{cb3ae85956c896ad85215f21440a58c0}
+      \strng{authornamehash}{cb3ae85956c896ad85215f21440a58c0}
+      \strng{authorfullhash}{cb3ae85956c896ad85215f21440a58c0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://esd.cs.ucr.edu/webres/can20.pdf}}
+      \field{note}{[Online; accessed Dec 12, 2023]}
+      \field{title}{CAN Specification Version 2.0}
+      \field{year}{1991}
+    \endentry
     \entry{ISO11898-1:2015}{misc}{}
       \name{author}{1}{}{%
         {{hash=7058e4bd76f877c52b621c942b30613c}{%
@@ -513,8 +536,8 @@
       \strng{authorbibnamehash}{9d7b0e509153bc4f52a02788b07f2c31}
       \strng{authornamehash}{9d7b0e509153bc4f52a02788b07f2c31}
       \strng{authorfullhash}{9d7b0e509153bc4f52a02788b07f2c31}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{AcubeSAT OBDH DDJF}}}
@@ -608,6 +631,31 @@
       \verb https://gitlab.com/acubesat/documentation/cdr-public/-/blob/master/DDJF/DDJF_OBSW.pdf
       \endverb
     \endentry
+    \entry{iso157652016}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d09e7fcc2435a0349538e27d16bc4365}{%
+           family={Standardization},
+           familyi={S\bibinitperiod},
+           given={International\bibnamedelima Organization},
+           giveni={I\bibinitperiod\bibinitdelim O\bibinitperiod},
+           prefix={for},
+           prefixi={f\bibinitperiod}}}%
+      }
+      \strng{namehash}{d09e7fcc2435a0349538e27d16bc4365}
+      \strng{fullhash}{d09e7fcc2435a0349538e27d16bc4365}
+      \strng{bibnamehash}{d09e7fcc2435a0349538e27d16bc4365}
+      \strng{authorbibnamehash}{d09e7fcc2435a0349538e27d16bc4365}
+      \strng{authornamehash}{d09e7fcc2435a0349538e27d16bc4365}
+      \strng{authorfullhash}{d09e7fcc2435a0349538e27d16bc4365}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.iso.org/standard/66574.html}}
+      \field{note}{[Online; accessed 12-December-2023]}
+      \field{title}{ISO 15765-2:2016 Road vehicles -- Diagnostic communication over Controller Area Network (DoCAN) -- Part 2: Transport protocol and network layer services}
+      \field{year}{2016}
+    \endentry
     \entry{sehr2018cpp}{book}{}
       \name{author}{2}{}{%
         {{hash=8da89cf2dbe96f8b771d0eb1ad4115cf}{%
@@ -671,8 +719,8 @@
       \strng{authorbibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
       \strng{authornamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
       \strng{authorfullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.freertos.org/fr-content-src/uploads/2018/07/161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf}}
