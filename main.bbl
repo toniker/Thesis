@@ -375,6 +375,29 @@
       \verb https://ww1.microchip.com/downloads/aemDocuments/documents/AERO/ProductDocuments/DataSheets/SAMV71Q21RT-DataSheet-DS60001555.pdf
       \endverb
     \endentry
+    \entry{digikey2021canbus}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3262b34b6b27d7a407916e730e9a0d8f}{%
+           family={DigiKey\bibnamedelimb Electronics\bibnamedelima forum},
+           familyi={D\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim f\bibinitperiod},
+           prefix={kkohlhase\bibnamedelima on},
+           prefixi={k\bibinitperiod\bibinitdelim o\bibinitperiod}}}%
+      }
+      \strng{namehash}{3262b34b6b27d7a407916e730e9a0d8f}
+      \strng{fullhash}{3262b34b6b27d7a407916e730e9a0d8f}
+      \strng{bibnamehash}{3262b34b6b27d7a407916e730e9a0d8f}
+      \strng{authorbibnamehash}{3262b34b6b27d7a407916e730e9a0d8f}
+      \strng{authornamehash}{3262b34b6b27d7a407916e730e9a0d8f}
+      \strng{authorfullhash}{3262b34b6b27d7a407916e730e9a0d8f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://forum.digikey.com/t/overview-of-the-can-bus-protocol/21170}}
+      \field{note}{[Online; accessed 13-December-2023]}
+      \field{title}{Overview of the CAN bus protocol}
+      \field{year}{2022}
+    \endentry
     \entry{comprehensibleguidetocan}{book}{}
       \name{author}{1}{}{%
         {{hash=9d4ad8bde782945f70c3a13cb618b07f}{%
@@ -503,8 +526,8 @@
       \strng{authorbibnamehash}{46867fb9d9bb9cb51c2f019f9f415052}
       \strng{authornamehash}{46867fb9d9bb9cb51c2f019f9f415052}
       \strng{authorfullhash}{46867fb9d9bb9cb51c2f019f9f415052}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{{AcubeSAT FMEA File}}}
@@ -699,8 +722,8 @@
       \strng{authorbibnamehash}{4bd60f42ad66aa3d8da93ff0bc918129}
       \strng{authornamehash}{4bd60f42ad66aa3d8da93ff0bc918129}
       \strng{authorfullhash}{4bd60f42ad66aa3d8da93ff0bc918129}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://gcc.gnu.org/onlinedocs/gcc-13.2.0/gcc.pdf}}
