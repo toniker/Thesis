@@ -22,3 +22,6 @@ biber:
 
 pdflatex:
 	docker run --rm -it -v $(current_dir):/src -w /src zydou/texlive:latest pdflatex -pdf -file-line-error --shell-escape -f -interaction=nonstopmode main
+
+checkcites:
+	docker run --rm -it -v $(current_dir):/src -w /src zydou/texlive:latest checkcites --unused main.aux
